@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fenceCurved.obj-a316e77ff7b48a360ae13a5e4aea86fb.mesh"
+
+[deps]
+
+files=[ "res://.import/fenceCurved.obj-a316e77ff7b48a360ae13a5e4aea86fb.mesh" ]
+
+source_file="res://assets/buildings/fenceCurved.obj"
+dest_files=[ "res://.import/fenceCurved.obj-a316e77ff7b48a360ae13a5e4aea86fb.mesh", "res://.import/fenceCurved.obj-a316e77ff7b48a360ae13a5e4aea86fb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

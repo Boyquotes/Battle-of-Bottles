@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lily_large.obj-08dbe5d71e470af63b2dc2ae59dc1e7a.mesh"
+
+[deps]
+
+files=[ "res://.import/lily_large.obj-08dbe5d71e470af63b2dc2ae59dc1e7a.mesh" ]
+
+source_file="res://assets/decoration/lily_large.obj"
+dest_files=[ "res://.import/lily_large.obj-08dbe5d71e470af63b2dc2ae59dc1e7a.mesh", "res://.import/lily_large.obj-08dbe5d71e470af63b2dc2ae59dc1e7a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

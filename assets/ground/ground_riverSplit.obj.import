@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_riverSplit.obj-a3c831cc8744fa4f8ecbc2351dcb5f22.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_riverSplit.obj-a3c831cc8744fa4f8ecbc2351dcb5f22.mesh" ]
+
+source_file="res://assets/ground/ground_riverSplit.obj"
+dest_files=[ "res://.import/ground_riverSplit.obj-a3c831cc8744fa4f8ecbc2351dcb5f22.mesh", "res://.import/ground_riverSplit.obj-a3c831cc8744fa4f8ecbc2351dcb5f22.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

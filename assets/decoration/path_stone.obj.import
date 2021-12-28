@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/path_stone.obj-bf14721cc20ad2e984c0613167997611.mesh"
+
+[deps]
+
+files=[ "res://.import/path_stone.obj-bf14721cc20ad2e984c0613167997611.mesh" ]
+
+source_file="res://assets/decoration/path_stone.obj"
+dest_files=[ "res://.import/path_stone.obj-bf14721cc20ad2e984c0613167997611.mesh", "res://.import/path_stone.obj-bf14721cc20ad2e984c0613167997611.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

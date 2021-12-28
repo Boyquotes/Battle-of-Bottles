@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/roadEdge.obj-b0d9c150445ceb8e52bcd4c4a21666f1.mesh"
+
+[deps]
+
+files=[ "res://.import/roadEdge.obj-b0d9c150445ceb8e52bcd4c4a21666f1.mesh" ]
+
+source_file="res://assets/buildings/roadEdge.obj"
+dest_files=[ "res://.import/roadEdge.obj-b0d9c150445ceb8e52bcd4c4a21666f1.mesh", "res://.import/roadEdge.obj-b0d9c150445ceb8e52bcd4c4a21666f1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

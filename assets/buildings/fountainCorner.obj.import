@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fountainCorner.obj-5ef4e3128fc6c872a77c153952091a36.mesh"
+
+[deps]
+
+files=[ "res://.import/fountainCorner.obj-5ef4e3128fc6c872a77c153952091a36.mesh" ]
+
+source_file="res://assets/buildings/fountainCorner.obj"
+dest_files=[ "res://.import/fountainCorner.obj-5ef4e3128fc6c872a77c153952091a36.mesh", "res://.import/fountainCorner.obj-5ef4e3128fc6c872a77c153952091a36.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

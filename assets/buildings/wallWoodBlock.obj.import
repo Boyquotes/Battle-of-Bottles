@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wallWoodBlock.obj-78a97eb238816cb74a8c12432c0bb36f.mesh"
+
+[deps]
+
+files=[ "res://.import/wallWoodBlock.obj-78a97eb238816cb74a8c12432c0bb36f.mesh" ]
+
+source_file="res://assets/buildings/wallWoodBlock.obj"
+dest_files=[ "res://.import/wallWoodBlock.obj-78a97eb238816cb74a8c12432c0bb36f.mesh", "res://.import/wallWoodBlock.obj-78a97eb238816cb74a8c12432c0bb36f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

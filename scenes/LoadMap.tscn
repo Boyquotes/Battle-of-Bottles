@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/LoadMap.gd" type="Script" id=1]
+[ext_resource path="res://scenes/LoadingUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/textures/loading_spinner.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/map1_screenshot.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/vignette.png" type="Texture" id=5]
+
+[node name="LoadMap" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+modulate = Color( 0.780392, 0.780392, 0.780392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vignette" type="TextureRect" parent="background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 984.0
+margin_bottom = 560.0
+alignment = 2
+
+[node name="loading_text" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 535.0
+margin_right = 984.0
+margin_bottom = 560.0
+text = "Connecting to server..."
+
+[node name="loading_anchor" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loading_spinner" type="Sprite" parent="loading_anchor"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+
+[node name="connection_timeout" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="connection_timeout" to="." method="_on_connection_timeout_timeout"]

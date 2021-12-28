@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/customizations/bottleKetchup.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/customizations/DefaultEyes.tscn" type="PackedScene" id=2]
+
+[node name="KetchupBottle" type="Spatial"]
+
+[node name="bottleKetchup" type="MeshInstance" parent="."]
+transform = Transform( 5.5, 0, 0, 0, 7.5, 0, 0, 0, 5.5, 0, -1.5, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Eyes" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0, -1.72729, 0 )

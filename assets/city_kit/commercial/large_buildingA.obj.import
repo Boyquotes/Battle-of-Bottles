@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/large_buildingA.obj-07f73eaa6457345f2639af67cf3790bd.mesh"
+
+[deps]
+
+files=[ "res://.import/large_buildingA.obj-07f73eaa6457345f2639af67cf3790bd.mesh" ]
+
+source_file="res://assets/city_kit/commercial/large_buildingA.obj"
+dest_files=[ "res://.import/large_buildingA.obj-07f73eaa6457345f2639af67cf3790bd.mesh", "res://.import/large_buildingA.obj-07f73eaa6457345f2639af67cf3790bd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

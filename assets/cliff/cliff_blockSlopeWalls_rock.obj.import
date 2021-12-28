@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_blockSlopeWalls_rock.obj-48bd38835d92320b406d1a7597e7a37b.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_blockSlopeWalls_rock.obj-48bd38835d92320b406d1a7597e7a37b.mesh" ]
+
+source_file="res://assets/cliff/cliff_blockSlopeWalls_rock.obj"
+dest_files=[ "res://.import/cliff_blockSlopeWalls_rock.obj-48bd38835d92320b406d1a7597e7a37b.mesh", "res://.import/cliff_blockSlopeWalls_rock.obj-48bd38835d92320b406d1a7597e7a37b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

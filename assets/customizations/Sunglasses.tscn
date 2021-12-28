@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/customizations/sunglasses.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+roughness = 0.4
+
+[node name="Banana" type="Spatial"]
+
+[node name="sunglasses" type="MeshInstance" parent="."]
+transform = Transform( 0.22, 1.58819e-23, 2.13163e-15, -1.77646e-16, 0.299138, 0.0151524, -2.33805e-15, -0.0227286, 0.199425, 0, 1.51949, 0.176376 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )

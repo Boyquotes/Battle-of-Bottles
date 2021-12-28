@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/construction_pylon.obj-5ea6ce22ab5e6b286e1ba2c22db8e3fa.mesh"
+
+[deps]
+
+files=[ "res://.import/construction_pylon.obj-5ea6ce22ab5e6b286e1ba2c22db8e3fa.mesh" ]
+
+source_file="res://assets/city_kit/roads/construction_pylon.obj"
+dest_files=[ "res://.import/construction_pylon.obj-5ea6ce22ab5e6b286e1ba2c22db8e3fa.mesh", "res://.import/construction_pylon.obj-5ea6ce22ab5e6b286e1ba2c22db8e3fa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

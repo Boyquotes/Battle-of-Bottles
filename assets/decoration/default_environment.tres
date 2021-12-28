@@ -1,0 +1,10 @@
+[gd_resource type="Environment" load_steps=2 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_energy = 4.08
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_energy = 0.11
+ssao_quality = 2

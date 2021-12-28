@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/low_buildingM.obj-a5e440add42c4aec2514e2847c5c920e.mesh"
+
+[deps]
+
+files=[ "res://.import/low_buildingM.obj-a5e440add42c4aec2514e2847c5c920e.mesh" ]
+
+source_file="res://assets/city_kit/commercial/low_buildingM.obj"
+dest_files=[ "res://.import/low_buildingM.obj-a5e440add42c4aec2514e2847c5c920e.mesh", "res://.import/low_buildingM.obj-a5e440add42c4aec2514e2847c5c920e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

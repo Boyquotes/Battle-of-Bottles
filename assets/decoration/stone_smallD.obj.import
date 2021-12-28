@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stone_smallD.obj-a9f6ed96f7af9fbac2972b3b4f77c4ac.mesh"
+
+[deps]
+
+files=[ "res://.import/stone_smallD.obj-a9f6ed96f7af9fbac2972b3b4f77c4ac.mesh" ]
+
+source_file="res://assets/decoration/stone_smallD.obj"
+dest_files=[ "res://.import/stone_smallD.obj-a9f6ed96f7af9fbac2972b3b4f77c4ac.mesh", "res://.import/stone_smallD.obj-a9f6ed96f7af9fbac2972b3b4f77c4ac.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

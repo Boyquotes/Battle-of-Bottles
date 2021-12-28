@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stone_largeC.obj-801eeaae6a9d127a898c7b84b6fb79bc.mesh"
+
+[deps]
+
+files=[ "res://.import/stone_largeC.obj-801eeaae6a9d127a898c7b84b6fb79bc.mesh" ]
+
+source_file="res://assets/decoration/stone_largeC.obj"
+dest_files=[ "res://.import/stone_largeC.obj-801eeaae6a9d127a898c7b84b6fb79bc.mesh", "res://.import/stone_largeC.obj-801eeaae6a9d127a898c7b84b6fb79bc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

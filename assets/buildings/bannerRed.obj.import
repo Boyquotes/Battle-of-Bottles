@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bannerRed.obj-6e0c15471682c2130d085727e7f4be1f.mesh"
+
+[deps]
+
+files=[ "res://.import/bannerRed.obj-6e0c15471682c2130d085727e7f4be1f.mesh" ]
+
+source_file="res://assets/buildings/bannerRed.obj"
+dest_files=[ "res://.import/bannerRed.obj-6e0c15471682c2130d085727e7f4be1f.mesh", "res://.import/bannerRed.obj-6e0c15471682c2130d085727e7f4be1f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

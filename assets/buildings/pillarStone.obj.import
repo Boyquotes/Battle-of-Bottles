@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pillarStone.obj-4328c78d7c85007c02552d7552d48567.mesh"
+
+[deps]
+
+files=[ "res://.import/pillarStone.obj-4328c78d7c85007c02552d7552d48567.mesh" ]
+
+source_file="res://assets/buildings/pillarStone.obj"
+dest_files=[ "res://.import/pillarStone.obj-4328c78d7c85007c02552d7552d48567.mesh", "res://.import/pillarStone.obj-4328c78d7c85007c02552d7552d48567.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

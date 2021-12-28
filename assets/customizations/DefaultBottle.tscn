@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/bottles/bottleOil.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/customizations/DefaultEyes.tscn" type="PackedScene" id=2]
+
+[node name="bottleOil" type="MeshInstance"]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0, -1.49973, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="Eyes" parent="." instance=ExtResource( 2 )]

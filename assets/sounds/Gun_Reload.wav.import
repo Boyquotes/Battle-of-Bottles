@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gun_Reload.wav-1946384dfbb29fe6fd7b86537d544423.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Gun_Reload.wav"
+dest_files=[ "res://.import/Gun_Reload.wav-1946384dfbb29fe6fd7b86537d544423.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

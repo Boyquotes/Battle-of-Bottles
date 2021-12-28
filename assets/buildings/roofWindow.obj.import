@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/roofWindow.obj-4e5648c4fa266c3c50994a6a72367a9e.mesh"
+
+[deps]
+
+files=[ "res://.import/roofWindow.obj-4e5648c4fa266c3c50994a6a72367a9e.mesh" ]
+
+source_file="res://assets/buildings/roofWindow.obj"
+dest_files=[ "res://.import/roofWindow.obj-4e5648c4fa266c3c50994a6a72367a9e.mesh", "res://.import/roofWindow.obj-4e5648c4fa266c3c50994a6a72367a9e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

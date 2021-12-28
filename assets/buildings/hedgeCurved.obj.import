@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hedgeCurved.obj-2501c615e79083c9d49c359dbe42e843.mesh"
+
+[deps]
+
+files=[ "res://.import/hedgeCurved.obj-2501c615e79083c9d49c359dbe42e843.mesh" ]
+
+source_file="res://assets/buildings/hedgeCurved.obj"
+dest_files=[ "res://.import/hedgeCurved.obj-2501c615e79083c9d49c359dbe42e843.mesh", "res://.import/hedgeCurved.obj-2501c615e79083c9d49c359dbe42e843.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stump_squareDetailed.obj-66444a5d9ec3816cd5257973210c5a4b.mesh"
+
+[deps]
+
+files=[ "res://.import/stump_squareDetailed.obj-66444a5d9ec3816cd5257973210c5a4b.mesh" ]
+
+source_file="res://assets/decoration/stump_squareDetailed.obj"
+dest_files=[ "res://.import/stump_squareDetailed.obj-66444a5d9ec3816cd5257973210c5a4b.mesh", "res://.import/stump_squareDetailed.obj-66444a5d9ec3816cd5257973210c5a4b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

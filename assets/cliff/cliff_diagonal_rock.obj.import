@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_diagonal_rock.obj-8e3638a1137656b12169c6d5dbf115ec.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_diagonal_rock.obj-8e3638a1137656b12169c6d5dbf115ec.mesh" ]
+
+source_file="res://assets/cliff/cliff_diagonal_rock.obj"
+dest_files=[ "res://.import/cliff_diagonal_rock.obj-8e3638a1137656b12169c6d5dbf115ec.mesh", "res://.import/cliff_diagonal_rock.obj-8e3638a1137656b12169c6d5dbf115ec.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

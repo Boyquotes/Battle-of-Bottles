@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_corner_rock.obj-92e28f7b6084965d305c8188a1816214.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_corner_rock.obj-92e28f7b6084965d305c8188a1816214.mesh" ]
+
+source_file="res://assets/cliff/cliff_corner_rock.obj"
+dest_files=[ "res://.import/cliff_corner_rock.obj-92e28f7b6084965d305c8188a1816214.mesh", "res://.import/cliff_corner_rock.obj-92e28f7b6084965d305c8188a1816214.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

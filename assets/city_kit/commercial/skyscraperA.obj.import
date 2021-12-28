@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/skyscraperA.obj-44ef1e7bd22147f728920328d5c2834b.mesh"
+
+[deps]
+
+files=[ "res://.import/skyscraperA.obj-44ef1e7bd22147f728920328d5c2834b.mesh" ]
+
+source_file="res://assets/city_kit/commercial/skyscraperA.obj"
+dest_files=[ "res://.import/skyscraperA.obj-44ef1e7bd22147f728920328d5c2834b.mesh", "res://.import/skyscraperA.obj-44ef1e7bd22147f728920328d5c2834b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

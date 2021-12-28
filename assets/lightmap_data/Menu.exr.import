@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/Menu.exr-71aeb66d492d21b3e406ab0f51eeca79.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/lightmap_data/Menu.exr"
+dest_files=[ "res://.import/Menu.exr-71aeb66d492d21b3e406ab0f51eeca79.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=2

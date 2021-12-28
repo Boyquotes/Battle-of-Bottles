@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/textures/eye2.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/eye1.png" type="Texture" id=2]
+
+[node name="Eyes" type="Spatial"]
+
+[node name="eye1" type="Sprite3D" parent="."]
+transform = Transform( -6.55671e-10, 0, -0.015, 0, 0.015, 0, 0.015, 0, -6.55671e-10, -0.0321462, 0.598966, -0.0199895 )
+texture = ExtResource( 2 )
+
+[node name="eye2" type="Sprite3D" parent="."]
+transform = Transform( -6.55671e-10, 0, -0.015, 0, 0.015, 0, 0.015, 0, -6.55671e-10, -0.0321462, 0.597722, 0.0210856 )
+texture = ExtResource( 1 )

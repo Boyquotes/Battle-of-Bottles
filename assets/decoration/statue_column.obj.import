@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/statue_column.obj-e395bbbe15af61fdf1000d28301d36ae.mesh"
+
+[deps]
+
+files=[ "res://.import/statue_column.obj-e395bbbe15af61fdf1000d28301d36ae.mesh" ]
+
+source_file="res://assets/decoration/statue_column.obj"
+dest_files=[ "res://.import/statue_column.obj-e395bbbe15af61fdf1000d28301d36ae.mesh", "res://.import/statue_column.obj-e395bbbe15af61fdf1000d28301d36ae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

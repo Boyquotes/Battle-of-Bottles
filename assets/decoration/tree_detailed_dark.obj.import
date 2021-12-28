@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_detailed_dark.obj-48ac4b9d237132c418b80d9362b30daa.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_detailed_dark.obj-48ac4b9d237132c418b80d9362b30daa.mesh" ]
+
+source_file="res://assets/decoration/tree_detailed_dark.obj"
+dest_files=[ "res://.import/tree_detailed_dark.obj-48ac4b9d237132c418b80d9362b30daa.mesh", "res://.import/tree_detailed_dark.obj-48ac4b9d237132c418b80d9362b30daa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

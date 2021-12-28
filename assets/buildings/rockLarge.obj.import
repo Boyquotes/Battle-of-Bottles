@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rockLarge.obj-79e184f5c013a4f12201e97c202791fa.mesh"
+
+[deps]
+
+files=[ "res://.import/rockLarge.obj-79e184f5c013a4f12201e97c202791fa.mesh" ]
+
+source_file="res://assets/buildings/rockLarge.obj"
+dest_files=[ "res://.import/rockLarge.obj-79e184f5c013a4f12201e97c202791fa.mesh", "res://.import/rockLarge.obj-79e184f5c013a4f12201e97c202791fa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

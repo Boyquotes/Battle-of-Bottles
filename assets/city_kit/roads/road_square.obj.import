@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/road_square.obj-1234741927eca8f537ea5c7af71d626a.mesh"
+
+[deps]
+
+files=[ "res://.import/road_square.obj-1234741927eca8f537ea5c7af71d626a.mesh" ]
+
+source_file="res://assets/city_kit/roads/road_square.obj"
+dest_files=[ "res://.import/road_square.obj-1234741927eca8f537ea5c7af71d626a.mesh", "res://.import/road_square.obj-1234741927eca8f537ea5c7af71d626a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
