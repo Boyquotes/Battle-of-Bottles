@@ -12,6 +12,7 @@ var customizations = {
 		"german": ["German Hat", load("res://assets/customizations/German.tscn")],
 		"banana": ["Banana Hat", load("res://assets/customizations/Banana.tscn")],
 		"hat": ["Bowler Hat", load("res://assets/customizations/Hat.tscn")],
+		"holiday_hat": ["Holiday Hat", load("res://assets/customizations/Holiday.tscn")],
 		"sunglasses": ["Sunglasses", load("res://assets/customizations/Sunglasses.tscn")]
 	},
 	"bottles": {

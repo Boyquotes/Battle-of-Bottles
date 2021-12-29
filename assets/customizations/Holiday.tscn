@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/customizations/holiday_hat.mesh" type="ArrayMesh" id=1]
+
+[node name="holiday_hat" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -8.74228e-09, 0.038638, 0.196232, 0, 0.196232, -0.038638, -0.2, -1.68892e-09, -8.57759e-09, 0, 1.56669, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
