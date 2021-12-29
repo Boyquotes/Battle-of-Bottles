@@ -1,7 +1,5 @@
 [gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://assets/UI/red_progress.png" type="Texture" id=1]
-[ext_resource path="res://assets/UI/red_button00.png" type="Texture" id=2]
 [ext_resource path="res://scenes/IngameUI.gd" type="Script" id=3]
 [ext_resource path="res://assets/textures/ammo.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/vegur/Vegur-Light.otf" type="DynamicFontData" id=5]
@@ -38,6 +36,12 @@ font_data = ExtResource( 5 )
 size = 18
 use_filter = true
 font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 1, 1, 1, 0.729412 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 1, 1, 0.364706 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
@@ -94,14 +98,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="MarginContainer"]
-margin_right = 1004.0
-margin_bottom = 580.0
-step = 0.01
-value = 10.0
-texture_over = ExtResource( 1 )
-texture_progress = ExtResource( 2 )
-
 [node name="Tween" type="Tween" parent="."]
 
 [node name="ammo" type="Control" parent="."]
@@ -151,6 +147,62 @@ margin_right = 90.2409
 margin_bottom = 121.944
 custom_fonts/font = SubResource( 3 )
 text = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="health" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -128.0
+margin_right = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="max" type="Label" parent="health"]
+margin_left = 49.647
+margin_top = 73.699
+margin_right = 67.647
+margin_bottom = 98.6995
+custom_fonts/font = SubResource( 1 )
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="current" type="Label" parent="health"]
+margin_left = 6.0
+margin_top = 61.0
+margin_right = 38.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slash" type="Label" parent="health"]
+margin_left = 40.958
+margin_top = 75.989
+margin_right = 76.958
+margin_bottom = 100.989
+custom_fonts/font = SubResource( 3 )
+text = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="ProgressBar" parent="health"]
+margin_left = 9.0
+margin_top = 104.086
+margin_right = 199.0
+margin_bottom = 118.086
+custom_styles/fg = SubResource( 13 )
+custom_styles/bg = SubResource( 14 )
+value = 10.0
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

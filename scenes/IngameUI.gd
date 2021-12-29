@@ -1,8 +1,20 @@
 extends Control
 
+signal respawn
 
-onready var bar = $MarginContainer/TextureProgress
+const PLAYER_ITEM = preload("res://scenes/PlayerListItem.tscn")
+
+var paused = false
+var death_screen_duration = 0
+var animated_pause_menu_alpha = 0
+var animated_scope_alpha = 0
+var animated_health = 0
+var show_cooldown = false
+
+onready var bar = $health/HealthBar
 onready var tween = $Tween
+onready var health_max = $health/max
+onready var health_current = $health/current
 onready var damage_indicator = $crosshair/damage_indicator
 onready var respawning_text = $death_ui/VBoxContainer/CenterContainer/respawning_text
 onready var respawn_timer = $death_ui/respawn_timer
@@ -20,21 +32,10 @@ onready var minimap_texture = $minimap/rotation_helper/mask/map_texture
 onready var minimap_rotation_helper = $minimap/rotation_helper
 onready var minimap = $minimap
 
-const player_item = preload("res://scenes/PlayerListItem.tscn")
-
-var paused = false
-var death_screen_duration = 0
-
-var animated_pause_menu_alpha = 0
-var animated_scope_alpha = 0
-var animated_health = 0
-var show_cooldown = false
-
-signal respawn
 
 func _ready():
 	var player_max_health = get_parent().MAX_HEALTH
-	print(player_max_health)
+	health_max.text = str(round(player_max_health / 10))
 	update_health(player_max_health)
 	get_parent().connect("health_changed", self, "_health_changed")
 	get_parent().connect("hit", self, "_indicate_hit")
@@ -79,6 +80,7 @@ func _indicate_hit(bullet_transform: Transform):
 	$crosshair/damage_indicator/Sprite.modulate.b = clamp($crosshair/damage_indicator/Sprite.modulate.b - 0.3, 0, 1)
 
 func update_health(new_value):
+	health_current.text = str(round(new_value / 10))
 	tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.05)
 	if not tween.is_active():
 		tween.start()
@@ -145,14 +147,14 @@ func show_pause_menu():
 	for i in list_item_container.get_children():
 		i.queue_free()
 	var players = Multiplayer.player_info
-	var own_item = player_item.instance()
+	var own_item = PLAYER_ITEM.instance()
 	own_item.player_name = "You"
 	own_item.kills = Multiplayer.kills
 	own_item.deaths = Multiplayer.deaths
 	list_item_container.add_child(own_item)
 	for i in players.keys():
 		if not(i == 1 and players[i]["info"]["name"] == "_server"):
-			var item = player_item.instance()
+			var item = PLAYER_ITEM.instance()
 			item.id = i
 			item.player_name = players[i]["info"]["name"]
 			item.kills = players[i]["stats"][0]
