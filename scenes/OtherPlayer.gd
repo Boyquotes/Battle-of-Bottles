@@ -8,17 +8,17 @@ var current_weapon = "machinegun"
 var customizations = {
 	"hats": {
 		"": ["none", null],
-		"pizza": ["Italian Hat", load("res://assets/customizations/Pizza.tscn")],
-		"german": ["German Hat", load("res://assets/customizations/German.tscn")],
-		"banana": ["Banana Hat", load("res://assets/customizations/Banana.tscn")],
-		"hat": ["Bowler Hat", load("res://assets/customizations/Hat.tscn")],
-		"holiday_hat": ["Holiday Hat", load("res://assets/customizations/Holiday.tscn")],
-		"sunglasses": ["Sunglasses", load("res://assets/customizations/Sunglasses.tscn")]
+		"pizza": ["Italian Hat", preload("res://assets/customizations/Pizza.tscn")],
+		"german": ["German Hat", preload("res://assets/customizations/German.tscn")],
+		"banana": ["Banana Hat", preload("res://assets/customizations/Banana.tscn")],
+		"hat": ["Bowler Hat", preload("res://assets/customizations/Hat.tscn")],
+		"holiday_hat": ["Holiday Hat", preload("res://assets/customizations/Holiday.tscn")],
+		"sunglasses": ["Sunglasses", preload("res://assets/customizations/Sunglasses.tscn")]
 	},
 	"bottles": {
-		"default_bottle": ["Default", load("res://assets/customizations/DefaultBottle.tscn"), load("res://assets/customizations/DefaultBottle_broken.tscn")],
-		"ketchup_bottle": ["Ketchup", load("res://assets/customizations/KetchupBottle.tscn"), load("res://assets/customizations/KetchupBottle_broken.tscn")],
-		"superbottle": ["Superbottle", load("res://assets/customizations/SuperBottle.tscn"), load("res://assets/customizations/SuperBottle_broken.tscn")]
+		"default_bottle": ["Default", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
+		"ketchup_bottle": ["Ketchup", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
+		"superbottle": ["Superbottle", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")]
 	}
 }
 
