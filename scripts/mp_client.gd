@@ -34,9 +34,9 @@ var my_info = {}
 var player_info = {}
 
 var maps = {
-	"default": ["Default Map", "res://Map.tscn"],
-	"city": ["City Map", "res://Map2.tscn"],
-	"zombie_map": ["Zombie Map", "res://Map3.tscn"],
+	"default": ["Default Map", "res://scenes/maps/Map.tscn"],
+	"city": ["City Map", "res://scenes/maps/Map2.tscn"],
+	"zombie_map": ["Zombie Map", "res://scenes/maps/Map3.tscn"],
 	}
 
 var kills = 0

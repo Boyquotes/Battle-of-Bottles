@@ -3163,6 +3163,7 @@ __meta__ = {
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
+hint_tooltip = "Username"
 custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = ExtResource( 7 )
 custom_styles/normal = ExtResource( 7 )

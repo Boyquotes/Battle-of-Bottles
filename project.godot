@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "Map",
 "language": "GDScript",
-"path": "res://map_class.gd"
+"path": "res://scenes/map_class.gd"
 } ]
 _global_script_class_icons={
 "Gun": "",
