@@ -189,4 +189,4 @@ margin_top = 55.0
 margin_right = 237.0
 margin_bottom = 55.0
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Button" to="PlayerListItem" method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
