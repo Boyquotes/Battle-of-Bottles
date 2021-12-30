@@ -9,6 +9,7 @@ onready var label = $HBoxContainer/Label
 
 
 func _ready():
+	maps.erase("city")
 	label.text = maps[maps.keys()[current_index]][0]
 	current_map = maps.keys()[current_index]
 
