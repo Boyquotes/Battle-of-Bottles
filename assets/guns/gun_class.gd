@@ -75,7 +75,7 @@ func shoot():
 						get_parent().get_parent().add_child(particle_instance)
 						particle_instance.global_transform.origin = ray_cast.get_collision_point()
 						particle_instance.look_at(global_transform.origin, Vector3.UP)
-					elif not body.is_in_group("local_player"):
+					elif not body.is_in_group("local_player") and not body is RigidBody:
 						# Spawn bullet decal
 						var bullet_decal = BULLET_DECAL_SCENE.instance()
 						get_parent().get_parent().add_child(bullet_decal)

@@ -10,10 +10,6 @@ var current_path_node = 0
 var health = 50
 var momentum = Vector3(0,0,0)
 
-onready var nav = get_parent().get_parent()
-onready var map = get_parent().get_parent().get_parent()
-
-
 var customizations = {
 	"hats": {
 		"": ["none", null],
@@ -31,6 +27,9 @@ var own_customization = {}
 
 var target : Spatial
 var target_id : int
+
+onready var nav = get_parent().get_parent()
+onready var map = get_parent().get_parent().get_parent()
 
 
 func _ready():
