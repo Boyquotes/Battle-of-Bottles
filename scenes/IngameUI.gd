@@ -86,7 +86,7 @@ func update_health(new_value):
 		tween.start()
 
 func show_death_screen(player_id, duration):
-	$MarginContainer.hide()
+	$health.hide()
 	$ammo.hide()
 	$crosshair.hide()
 	$death_ui.show()
