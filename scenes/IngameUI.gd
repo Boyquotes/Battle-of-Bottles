@@ -121,6 +121,7 @@ func _on_respawn_timer_timeout():
 		emit_signal("respawn")
 		$MarginContainer.show()
 		$ammo.show()
+		$health.show()
 		$crosshair.show()
 		$death_ui.hide()
 
