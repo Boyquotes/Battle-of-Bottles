@@ -12,7 +12,6 @@ var player
 func _ready():
 	other_players = get_node(other_players_path)
 	player = get_node(player_path)
-	Multiplayer.connect("other_loaded", self, "_other_loaded")
 	Multiplayer.connect("player_died", self, "_player_died")
 	Multiplayer.connect("cam_to_map", self, "_cam_to_map")
 	Multiplayer.map_loaded()
