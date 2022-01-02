@@ -9,6 +9,9 @@ const GRAVITY = -24.8
 const MAX_SPEED = 15
 const JUMP_POWER = 10
 const ACCEL = 2.5
+const DEACCEL= 16
+const AIR_ACCEL = 1
+const AIR_DEACCEL = 2.5
 const DAMAGE = 10
 const GUN_SPEED = 5.0
 const GUN_SHAKE_AMOUNT = 1.0
@@ -18,7 +21,6 @@ const MAX_HEALTH = 100
 const DEATH_SCREEN_LENGTH = 3
 const NATURAL_REGENERATION_SPEED = 2
 const RECOIL_STRENGTH = 10.0
-const DEACCEL= 16
 const MAX_SLOPE_ANGLE = 40
 const DEFAULT_FOV = 70
 const ZOOM_FOV = 30
@@ -284,9 +286,15 @@ func process_movement(delta):
 	
 	var accel
 	if dir.dot(hvel) > 0:
-		accel = ACCEL
+		if is_on_floor():
+			accel = ACCEL
+		else:
+			accel = AIR_ACCEL
 	else:
-		accel = DEACCEL
+		if is_on_floor():
+			accel = DEACCEL
+		else:
+			accel = AIR_DEACCEL
 	
 	hvel = hvel.linear_interpolate(target, accel * delta)
 	vel.x = hvel.x
