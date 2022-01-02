@@ -28,7 +28,7 @@ func _process(delta):
 		Multiplayer.send_position(Vector3(0,-10,0), Vector3(0,0,0))
 
 
-func _player_died(id, pos, rot, bullet_global_transform, killer_id):
+func _player_died(id, pos, rot, bullet_global_transform):
 	var player_info = Multiplayer.player_info
 	player_info[id]["instance"].hide() # Hide player until they respawn
 	if player_info[id]["instance"].customizations["bottles"].has(player_info[id]["info"]["customizations"]["bottles"]):

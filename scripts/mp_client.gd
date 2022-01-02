@@ -232,7 +232,7 @@ remote func player_dead(pos: Vector3, rot: Vector3, bullet_global_transform: Tra
 	else:
 		kills += 1
 	player_info[id]["stats"][1] += 1
-	emit_signal("player_died", id, pos, rot, bullet_global_transform, killer_id)
+	emit_signal("player_died", id, pos, rot, bullet_global_transform)
 
 
 func player_respawn(id):
