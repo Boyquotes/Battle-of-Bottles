@@ -5,6 +5,6 @@
 [node name="Hat" type="Spatial"]
 
 [node name="hat" type="MeshInstance" parent="."]
-transform = Transform( 0.199198, 0.0178936, 0, -0.0178936, 0.199198, 0, 0, 0, 0.2, 0, 1.54945, 0 )
+transform = Transform( 0.19956, 0.0132583, 0, -0.0132583, 0.19956, 0, 0, 0, 0.2, 0, 1.5588, 0 )
 mesh = ExtResource( 1 )
 material/0 = null
