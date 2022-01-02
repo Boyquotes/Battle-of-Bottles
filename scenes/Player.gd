@@ -21,7 +21,7 @@ const MAX_HEALTH = 100
 const DEATH_SCREEN_LENGTH = 3
 const NATURAL_REGENERATION_SPEED = 2
 const RECOIL_STRENGTH = 10.0
-const MAX_SLOPE_ANGLE = 40
+const MAX_SLOPE_ANGLE = 45
 const DEFAULT_FOV = 70
 const ZOOM_FOV = 30
 const SCOPE_FOV = 5
@@ -194,7 +194,7 @@ func process_input(delta):
 			vel.y = JUMP_POWER
 	
 	if next_recoil != 0:
-		vel += camera.global_transform.basis.z * RECOIL_STRENGTH * next_recoil
+		vel += camera.global_transform.basis.z * RECOIL_STRENGTH * next_recoil * Vector3(1, 0.75, 1)
 		next_recoil = 0
 	
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -299,7 +299,7 @@ func process_movement(delta):
 	hvel = hvel.linear_interpolate(target, accel * delta)
 	vel.x = hvel.x
 	vel.z = hvel.z
-	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE), false)
+	vel = move_and_slide(vel, Vector3(0, 1, 0), false, 4, deg2rad(MAX_SLOPE_ANGLE), true)
 
 	if vel.y < -30:
 		fall_damage = round(-vel.y * fall_damage_factor)
