@@ -2,7 +2,7 @@
 
 A 3D multiplayer shooter game made in Godot.
 
-![Battle of Bottles Screenshot](https://img.itch.zone/aW1hZ2UvMTMzNDIwMy83NzYxNjY4LnBuZw==/original/Fo1BNz.png)
+![Battle of Bottles Screenshot](https://img.itch.zone/aW1hZ2UvMTMzNDIwMy83NzkzMjYwLnBuZw==/original/GTH%2FEk.png)
 
 ### Features
 - Play against other players
