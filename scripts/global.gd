@@ -15,6 +15,7 @@ const SAVE_PATH_SETTINGS = "user://settings.json"
 var settings = default_settings
 
 var IP
+var port := 0
 var current_scene
 var root
 

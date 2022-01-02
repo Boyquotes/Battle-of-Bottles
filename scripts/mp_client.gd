@@ -12,7 +12,7 @@ signal bottle_hit
 signal player_died
 signal cam_to_map
 
-const SERVER_PORT = 25575
+const DEFAULT_SERVER_PORT = 25575
 const PROTOCOL_VERSION = "1.1-dev"
 
 var other_player_scene
@@ -55,11 +55,14 @@ func _ready():
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 
 
-func activate_multiplayer(ip: String):
+func activate_multiplayer(ip: String, port: int):
 	print("client")
 	my_info = { "name": Global.settings["username"], "customizations": Global.user_customization, "mods": Mods.get_active().keys()}
 	var peer = NetworkedMultiplayerENet.new()
-	print(peer.create_client(ip, SERVER_PORT))
+	if port == 0:
+		print(peer.create_client(ip, DEFAULT_SERVER_PORT))
+	else:
+		print(peer.create_client(ip, port))
 	get_tree().network_peer = peer
 	is_server = false
 
@@ -68,7 +71,7 @@ func host_game(max_players, map):
 	print("server")
 	my_info = { "name": Global.settings["username"], "customizations": Global.user_customization, "mods": Mods.get_active().keys()}
 	var peer = NetworkedMultiplayerENet.new()
-	print(peer.create_server(SERVER_PORT, max_players))
+	print(peer.create_server(DEFAULT_SERVER_PORT, max_players))
 	get_tree().network_peer = peer
 	is_bottle_master = true
 	is_zombie_master = true

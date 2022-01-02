@@ -12,7 +12,7 @@ onready var loading_spinner = $loading_anchor/loading_spinner
 func _ready():
 	loading_text.text = CONNECTING_TEXT
 	Multiplayer.connect("loading_map", self, "on_multiplayer_loading_map")
-	Multiplayer.activate_multiplayer(Global.IP)
+	Multiplayer.activate_multiplayer(Global.IP, Global.port)
 
 
 func on_multiplayer_loading_map(map_name):

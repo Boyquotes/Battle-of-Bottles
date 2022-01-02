@@ -73,10 +73,28 @@ func _on_Quit_pressed():
 
 func _on_Connect_pressed():
 	if server_ip_line.text != "":
-		Global.IP = server_ip_line.text
-		Global.settings["last_server"] = server_ip_line.text
-		Global.save_settings()
-		get_tree().change_scene("res://scenes/LoadMap.tscn")
+		var ip_text = server_ip_line.text
+		if ip_text.count(":") == 1:
+			# Custom port
+			var ip_port = ip_text.split(":", false, 1)
+			if ip_port[1].is_valid_integer():
+				Global.IP = ip_port[0]
+				Global.port = int(ip_port[1])
+				Global.settings["last_server"] = server_ip_line.text
+				Global.save_settings()
+				get_tree().change_scene("res://scenes/LoadMap.tscn")
+			else:
+				Global.IP = server_ip_line.text
+				Global.port = 0
+				Global.settings["last_server"] = server_ip_line.text
+				Global.save_settings()
+				get_tree().change_scene("res://scenes/LoadMap.tscn")
+		else:
+			Global.IP = server_ip_line.text
+			Global.port = 0
+			Global.settings["last_server"] = server_ip_line.text
+			Global.save_settings()
+			get_tree().change_scene("res://scenes/LoadMap.tscn")
 
 
 var t = 0
