@@ -44,6 +44,7 @@ var deaths = 0
 
 onready var other_player_script = preload("res://scenes/OtherPlayer.gd").new()
 
+
 func _ready():
 
 	other_player_scene = preload("res://scenes/OtherPlayer.tscn")
@@ -90,6 +91,7 @@ func stop_multiplayer():
 	deaths = 0
 	get_tree().network_peer = null
 	player_info = {}
+	Global.port = 0
 
 
 func _player_connected(id):
@@ -100,16 +102,19 @@ func _player_connected(id):
 		rpc_id(id, "protocol_version_check", PROTOCOL_VERSION)
 	print(str(id) + " connected")
 
+
 remote func protocol_version_check(version):
 	if version != PROTOCOL_VERSION:
 		stop_multiplayer()
 		get_tree().change_scene("res://scenes/Outdated.tscn")
+
 
 remote func mods_check(client_mods):
 	if Mods.get_active().keys().hash() != client_mods.hash():
 		Global.required_mods = client_mods
 		stop_multiplayer()
 		get_tree().change_scene("res://scenes/InvalidMods.tscn")
+
 
 func _player_disconnected(id):
 	if is_map_loaded:
