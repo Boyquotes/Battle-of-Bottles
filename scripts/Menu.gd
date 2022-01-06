@@ -63,7 +63,7 @@ func _ready():
 	var local_ip_address := ""
 	for address in IP.get_local_addresses():
 		if (address.split('.').size() == 4):
-			if address.split('.')[0] == "192":
+			if address.split('.')[0].length() == 3:
 				local_ip_address = address
 	if local_ip_address != "":
 		local_server_ip.text = "Local Server IP: %s" % local_ip_address
