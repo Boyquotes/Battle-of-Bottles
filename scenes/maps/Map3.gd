@@ -11,11 +11,9 @@ var current_wave = 1
 
 func _ready():
 	Multiplayer.map_loaded()
-	$ZombieTimer.connect("timeout", self, "_on_ZombieTimer_timeout")
 	$WaveCooldown.connect("timeout", self, "_on_WaveCooldown_timeout")
 	Multiplayer.connect("new_zombie", self, "_on_Multiplayer_new_zombie")
 	Multiplayer.connect("other_loaded", self, "_other_loaded")
-	$ZombieTimer.start()
 	if Multiplayer.is_zombie_master:
 		$WaveCooldown.start()
 
@@ -28,6 +26,8 @@ func _process(delta):
 			print("wave starts soon")
 		elif $WaveCooldown.is_stopped():
 			wave_active = false
+
+	try_spawn_zombie()
 
 
 func new_wave(zombie_count):
@@ -81,14 +81,12 @@ func _on_WaveCooldown_timeout():
 	current_wave += 1
 
 
-func _on_ZombieTimer_timeout():
-	var current_zombie_index = zombie_queue.size() - 1
+func try_spawn_zombie():
 	if zombie_queue.size() > 0:
-		var zombie = zombie_queue[current_zombie_index]
+		var zombie = zombie_queue.back()
 		Multiplayer.new_zombie(zombie.name, zombie.target_id, zombie.id, zombie.transform.origin)
 		$Navigation/Zombies.add_child(zombie)
-		zombie_queue.remove(current_zombie_index)
-		current_zombie_index += 1
+		zombie_queue.pop_back()
 
 
 func _on_Multiplayer_new_zombie(name, target_id, id, origin):

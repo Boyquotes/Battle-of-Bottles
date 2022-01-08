@@ -218,9 +218,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -710, 15, 370 )
 
 [node name="Spatial" type="Spatial" parent="."]
 
-[node name="ZombieTimer" type="Timer" parent="."]
-wait_time = 0.016
-
 [node name="Bottles" type="Spatial" parent="."]
 
 [node name="WaveCooldown" type="Timer" parent="."]
