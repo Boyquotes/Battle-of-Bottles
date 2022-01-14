@@ -6,7 +6,7 @@ signal died
 signal hit
 
 const GRAVITY = -24.8
-const MAX_SPEED = 17.5
+const MAX_SPEED = 15
 const JUMP_POWER = 10
 const ACCEL = 2.5
 const DEACCEL= 16
