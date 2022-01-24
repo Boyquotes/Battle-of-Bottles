@@ -221,17 +221,6 @@ func process_input(delta):
 	
 	if Input.is_action_just_released("zoom") and is_scoping and not IngameUI.paused:
 		unscope()
-	
-	if Input.is_action_just_pressed("weapon_up"):
-		current_weapon_index += 1
-		if current_weapon_index > guns.size() - 1:
-			current_weapon_index = 0
-		weapon_index_changed = true
-	elif Input.is_action_just_pressed("weapon_down"):
-		current_weapon_index -= 1
-		if current_weapon_index < 0:
-			current_weapon_index = guns.size() - 1
-		weapon_index_changed = true
 
 
 func process_changing_weapons(delta):
@@ -355,6 +344,7 @@ func _input(event):
 		reload_cooldown.start()
 		guns[current_weapon][0].get_node("reload").play()
 	
+	# Change weapon with mouse wheel
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == BUTTON_WHEEL_UP:
@@ -368,6 +358,19 @@ func _input(event):
 					current_weapon_index = guns.size() - 1
 				weapon_index_changed = true
 	
+	# Change weapon with controller
+	if Input.is_action_just_pressed("next_weapon"):
+		current_weapon_index += 1
+		if current_weapon_index > guns.size() - 1:
+			current_weapon_index = 0
+		weapon_index_changed = true
+	elif Input.is_action_just_pressed("previous_weapon"):
+		current_weapon_index -= 1
+		if current_weapon_index < 0:
+			current_weapon_index = guns.size() - 1
+		weapon_index_changed = true
+	
+	# Change weapon with number keys
 	if Input.is_action_just_pressed("weapon_1"):
 		current_weapon_index = 0
 		weapon_index_changed = true
