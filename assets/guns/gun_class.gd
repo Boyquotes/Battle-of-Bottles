@@ -64,6 +64,7 @@ func shoot():
 					Multiplayer.shoot(ray_cast.get_collision_point())
 				else:
 					Multiplayer.shoot(Vector3(0,0,0))
+					Input.start_joy_vibration(0, 0, 1, 0.1)
 				
 				if ray_cast.is_colliding():
 					var body = ray_cast.get_collider()

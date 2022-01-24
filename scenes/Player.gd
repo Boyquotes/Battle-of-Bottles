@@ -66,7 +66,7 @@ onready var map = get_parent()
 
 
 onready var guns = {
-	#"unarmed": [gun node, current ammo, max ammo, uses scope, is mg, shoot cooldown, reload time],
+	#"unarmed": [gun node, current ammo, max ammo, uses scope, is mg, shoot automatically after cooldown,  cooldown, reload time],
 	"machinegun": [$machinegun, 30, 30, false, true, 0.1, 0.5],
 	"shotgun": [$shotgun, 6, 6, false, false, 1.35, 3.0],
 	"sniper": [$sniper, 10, 10, true, false, 2.4, 3.0],
@@ -190,14 +190,17 @@ func process_input(delta):
 	dir += -cam_xform.basis.z * input_movement_vector.y
 	dir += cam_xform.basis.x * input_movement_vector.x
 	
+	# Jumping
 	if is_on_floor() and not IngameUI.paused:
 		if Input.is_action_just_pressed("movement_jump"):
 			vel.y = JUMP_POWER
 	
+	# Applying recoil
 	if next_recoil != 0:
 		vel += camera.global_transform.basis.z * RECOIL_STRENGTH * next_recoil * Vector3(1, 0.75, 1)
 		next_recoil = 0
 	
+	# Escape menu
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -206,6 +209,7 @@ func process_input(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			IngameUI.hide_pause_menu()
 	
+	# Zooming
 	if Input.is_action_pressed("zoom") and not is_spectating and not IngameUI.paused:
 		zooming = true
 		if guns[current_weapon][3]:
@@ -221,6 +225,7 @@ func process_input(delta):
 		target_fov = DEFAULT_FOV
 		target_mouse_sensitivity = DEFAULT_MOUSE_SENSITIVITY
 	
+	# Stop zooming
 	if Input.is_action_just_released("zoom") and is_scoping and not IngameUI.paused:
 		unscope()
 	
@@ -307,7 +312,7 @@ func process_movement(delta):
 func shoot_cooldown():
 	can_shoot = true
 	if Input.is_action_pressed("shoot") and guns[current_weapon][4]:
-		guns[current_weapon][0].shoot() 
+		guns[current_weapon][0].shoot()
 
 
 func reload_cooldown():
@@ -318,6 +323,7 @@ func reload_cooldown():
 
 func die(bullet_global_transform, id):
 	if not Multiplayer.dead:
+		Input.start_joy_vibration(0, 0, 1, 0.1)
 		if guns[current_weapon][3] and is_scoping:
 			unscope()
 		Multiplayer.die(global_transform.origin, rotation, bullet_global_transform, id)
