@@ -27,6 +27,7 @@ const SCOPE_FOV = 5
 const DEFAULT_MOUSE_SENSITIVITY = 0.05
 const ZOOM_MOUSE_SENSITIVITY = 0.02
 const SCOPE_MOUSE_SENSITIVITE = 0.00357
+const CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER = 30
 
 export(float, 0.0, 1.0) var fov_acceleration = 0.1
 export var fall_damage_factor = 2.5
@@ -176,6 +177,7 @@ func process_input(delta):
 	
 	is_walking = false
 	if not IngameUI.paused:
+		# Input movement vector
 		if Input.is_action_pressed("movement_forward") or Input.is_action_pressed("movement_backward"):
 			input_movement_vector.y = Input.get_action_strength("movement_forward") - Input.get_action_strength("movement_backward")
 			is_walking = true
@@ -221,6 +223,15 @@ func process_input(delta):
 	
 	if Input.is_action_just_released("zoom") and is_scoping and not IngameUI.paused:
 		unscope()
+	
+	# Looking around with controller
+	if Input.is_action_pressed("look_up") or Input.is_action_pressed("look_down") or Input.is_action_pressed("look_left") or Input.is_action_pressed("look_right"):
+		rotation_helper.rotate_x(deg2rad((Input.get_action_strength("look_down") - Input.get_action_strength("look_up")) * MOUSE_SENSITIVITY * mouse_sensitivity_multiplier * CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER))
+		self.rotate_y(deg2rad((Input.get_action_strength("look_left") - Input.get_action_strength("look_right")) * MOUSE_SENSITIVITY * mouse_sensitivity_multiplier * CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER))
+		# Clamp rotation
+		var camera_rot = rotation_helper.rotation_degrees
+		camera_rot.x = clamp(camera_rot.x, -80, 80)
+		rotation_helper.rotation_degrees = camera_rot
 
 
 func process_changing_weapons(delta):
@@ -331,14 +342,16 @@ func spawn():
 
 
 func _input(event):
+	# Look around with mouse
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * mouse_sensitivity_multiplier))
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1 * mouse_sensitivity_multiplier))
-	
+		# Clamp rotation
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -80, 80)
 		rotation_helper.rotation_degrees = camera_rot
 	
+	# Reloading
 	if Input.is_action_just_pressed("reload") and not is_spectating and not IngameUI.paused:
 		reloading = true
 		reload_cooldown.start()
