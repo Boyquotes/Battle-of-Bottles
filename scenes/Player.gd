@@ -187,8 +187,11 @@ func process_input(delta):
 	
 	input_movement_vector = input_movement_vector.normalized()
 	
-	dir += -cam_xform.basis.z * input_movement_vector.y
-	dir += cam_xform.basis.x * input_movement_vector.x
+	# Multiply normalized values with Input strength for controller support
+	if Input.is_action_pressed("movement_forward") or Input.is_action_pressed("movement_backward"):
+		dir += -cam_xform.basis.z * input_movement_vector.y * (Input.get_action_strength("movement_forward") + Input.get_action_strength("movement_backward"))
+	if Input.is_action_pressed("movement_right") or Input.is_action_pressed("movement_left"):
+		dir += cam_xform.basis.x * input_movement_vector.x * (Input.get_action_strength("movement_right") + Input.get_action_strength("movement_left"))
 	
 	# Jumping
 	if is_on_floor() and not IngameUI.paused:
@@ -277,7 +280,6 @@ func process_movement(delta):
 		fall_damage = 0
 		
 	dir.y = 0
-	dir = dir.normalized()
 	
 	vel.y += delta * GRAVITY
 	
