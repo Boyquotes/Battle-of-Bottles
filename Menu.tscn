@@ -3627,32 +3627,6 @@ size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="Join_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
-margin_top = 62.0
-margin_right = 275.0
-margin_bottom = 112.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Join" type="Button" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = "  Join"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Host_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
 margin_top = 142.0
@@ -3674,6 +3648,32 @@ custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 7 )
 custom_styles/normal = ExtResource( 7 )
 text = " Host"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+material = ExtResource( 10 )
+margin_top = 62.0
+margin_right = 275.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 0, 50 )
+custom_styles/panel = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join" type="Button" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+text = "  Join"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4133,8 +4133,8 @@ __meta__ = {
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer3/CenterContainer2/right_bottle" to="." method="_on_right_bottle_pressed"]
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer2/cancel_blur/CancelCustomization" to="." method="_on_CancelCustomization_pressed"]
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer2/apply_blur/Apply" to="." method="_on_Apply_pressed"]
-[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Host_blur/PlayHost" to="." method="_on_PlayHost_pressed"]
+[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackPlay" to="." method="_on_BackPlay_pressed"]
 [connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur/Connect" to="." method="_on_Connect_pressed"]
 [connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/Back" to="." method="_on_Back_pressed"]

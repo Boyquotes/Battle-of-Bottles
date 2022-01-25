@@ -27,7 +27,7 @@ const SCOPE_FOV = 5
 const DEFAULT_MOUSE_SENSITIVITY = 0.05
 const ZOOM_MOUSE_SENSITIVITY = 0.02
 const SCOPE_MOUSE_SENSITIVITE = 0.00357
-const CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER = 30
+const CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER = 40
 
 export(float, 0.0, 1.0) var fov_acceleration = 0.1
 export var fall_damage_factor = 2.5
@@ -233,7 +233,7 @@ func process_input(delta):
 		unscope()
 	
 	# Looking around with controller
-	if Input.is_action_pressed("look_up") or Input.is_action_pressed("look_down") or Input.is_action_pressed("look_left") or Input.is_action_pressed("look_right"):
+	if (Input.is_action_pressed("look_up") or Input.is_action_pressed("look_down") or Input.is_action_pressed("look_left") or Input.is_action_pressed("look_right")) and not IngameUI.paused:
 		rotation_helper.rotate_x(deg2rad((Input.get_action_strength("look_down") - Input.get_action_strength("look_up")) * MOUSE_SENSITIVITY * mouse_sensitivity_multiplier * CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER))
 		self.rotate_y(deg2rad((Input.get_action_strength("look_left") - Input.get_action_strength("look_right")) * MOUSE_SENSITIVITY * mouse_sensitivity_multiplier * CONTROLLER_MOUSE_SENSITIVITY_MULTIPLIER))
 		# Clamp rotation
