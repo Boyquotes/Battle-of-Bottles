@@ -328,12 +328,13 @@ func get_username_from_id(id):
 
 
 func new_zombie(name, target_id, id, origin):
-	if connected:
+	if connected and is_zombie_master:
 		rpc("other_new_zombie", name, target_id, id, origin)
+		print("send new zombie")
 
 
 func new_zombie_with_id(player_id, name, target_id, id, origin):
-	if connected:
+	if connected and is_zombie_master:
 		rpc_id(player_id, "other_new_zombie", name, target_id, id, origin)
 
 
@@ -343,7 +344,7 @@ func zombie_hit(id, damage, bullet_global_trans):
 
 
 func zombie_sync(id, origin):
-	if connected:
+	if connected and is_zombie_master:
 		rpc("other_zombie_sync", id, origin)
 
 
@@ -358,11 +359,12 @@ remote func other_zombie_hit(id, damage, bullet_global_trans):
 
 remote func other_zombie_die(id, bullet_global_transform):
 	emit_signal("zombie_die", id, bullet_global_transform)
+	print("zombie died")
 
 
 remote func other_new_zombie(name, target_id, id, origin):
-	print("got rpc call")
-	emit_signal("new_zombie", name, target_id, id, origin)
+	if not is_zombie_master:
+		emit_signal("new_zombie", name, target_id, id, origin)
 
 
 remote func other_zombie_sync(id, origin):

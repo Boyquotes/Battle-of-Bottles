@@ -19,7 +19,7 @@ func _ready():
 
 
 func _process(delta):
-	if $Navigation/Zombies.get_child_count() == 0:
+	if $Navigation/Zombies.get_child_count() == 0 and Multiplayer.is_zombie_master:
 		if not wave_active:
 			wave_active = true
 			$WaveCooldown.start()
@@ -31,7 +31,7 @@ func _process(delta):
 
 
 func new_wave(zombie_count):
-	var spawn_points =$ZombieSpawnPoints.get_children()
+	var spawn_points = $ZombieSpawnPoints.get_children()
 	
 	var player_ids = []
 	var info = Multiplayer.player_info
@@ -85,7 +85,7 @@ func try_spawn_zombie():
 	if zombie_queue.size() > 0:
 		var zombie = zombie_queue.back()
 		Multiplayer.new_zombie(zombie.name, zombie.target_id, zombie.id, zombie.transform.origin)
-		$Navigation/Zombies.add_child(zombie)
+		add_zombie(zombie)
 		zombie_queue.pop_back()
 
 
@@ -96,7 +96,7 @@ func _on_Multiplayer_new_zombie(name, target_id, id, origin):
 	zombie.target_id = target_id
 	zombie.id = id
 	zombie.transform.origin = origin
-	$Navigation/Zombies.add_child(zombie)
+	add_zombie(zombie)
 
 
 func _other_loaded(id):
@@ -104,3 +104,9 @@ func _other_loaded(id):
 		for i in $Navigation/Zombies.get_children():
 			Multiplayer.new_zombie_with_id(id, i.name, i.target_id, i.id, i.transform.origin)
 
+
+func add_zombie(zombie):
+	for i in $Navigation/Zombies.get_children():
+		if i.id == zombie.id:
+			i.queue_free()
+	$Navigation/Zombies.add_child(zombie)
