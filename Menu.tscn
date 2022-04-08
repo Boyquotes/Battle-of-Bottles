@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=2]
+[gd_scene load_steps=205 format=2]
 
 [ext_resource path="res://scenes/OtherPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilemaps/Ground.tres" type="MeshLibrary" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/fonts/vegur/Vegur-Regular.otf" type="DynamicFontData" id=21]
 [ext_resource path="res://scripts/menu_mods.gd" type="Script" id=22]
 [ext_resource path="res://assets/styles/loading_font.tres" type="DynamicFont" id=23]
+[ext_resource path="res://scripts/menu_connect.gd" type="Script" id=24]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "dirt"
@@ -2875,9 +2876,6 @@ font_data = ExtResource( 21 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="3D" type="Spatial" parent="."]
 
@@ -3629,9 +3627,9 @@ alignment = 1
 
 [node name="Host_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
-margin_top = 142.0
+margin_top = 62.0
 margin_right = 275.0
-margin_bottom = 192.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 0, 50 )
 custom_styles/panel = ExtResource( 7 )
 __meta__ = {
@@ -3655,9 +3653,9 @@ __meta__ = {
 
 [node name="Join_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
-margin_top = 62.0
+margin_top = 142.0
 margin_right = 275.0
-margin_bottom = 112.0
+margin_bottom = 192.0
 rect_min_size = Vector2( 0, 50 )
 custom_styles/panel = ExtResource( 7 )
 __meta__ = {
@@ -3763,7 +3761,7 @@ size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="server_ip_blur" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="IP_blur" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
 margin_top = 62.0
 margin_right = 275.0
@@ -3774,21 +3772,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Server_IP" type="LineEdit" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/server_ip_blur"]
+[node name="IP" type="LineEdit" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/IP_blur"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
+hint_tooltip = "Username"
 custom_fonts/font = ExtResource( 5 )
 custom_styles/focus = ExtResource( 7 )
 custom_styles/normal = ExtResource( 7 )
-placeholder_text = " Server IP"
+max_length = 20
+placeholder_text = " IP-Address"
 placeholder_alpha = 0.4
 caret_blink = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Connect_blur" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="placeholder" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
 margin_top = 142.0
 margin_right = 275.0
@@ -3799,7 +3799,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Connect" type="Button" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur"]
+[node name="Connect" type="Button" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -3810,9 +3810,6 @@ custom_styles/focus = ExtResource( 7 )
 custom_styles/normal = ExtResource( 7 )
 text = " Connect"
 align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Back_blur" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
@@ -3825,7 +3822,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
+[node name="BackIP" type="Button" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -3840,17 +3837,151 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="placeholder" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="placeholder2" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+material = ExtResource( 10 )
 margin_top = 302.0
 margin_right = 275.0
 margin_bottom = 352.0
 rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = SubResource( 172 )
+custom_styles/panel = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="Control" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 279.0
+margin_right = 554.0
+margin_bottom = 415.0
+size_flags_horizontal = 3
+
+[node name="menu_connect" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menu_connect"]
+margin_right = 964.0
+margin_bottom = 540.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu_connect/HBoxContainer"]
+margin_right = 554.0
+margin_bottom = 540.0
+
+[node name="Label" type="Label" parent="menu_connect/HBoxContainer/VBoxContainer"]
+margin_right = 554.0
+margin_bottom = 121.0
+rect_min_size = Vector2( 554, 0 )
+custom_fonts/font = SubResource( 171 )
+text = "Join"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menu_connect/HBoxContainer/VBoxContainer"]
+margin_top = 125.0
+margin_right = 554.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 275.0
+margin_bottom = 415.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="list_blur" type="Panel" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+material = ExtResource( 10 )
+margin_top = 62.0
+margin_right = 275.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 275, 130 )
+custom_styles/panel = SubResource( 180 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="list_darken" type="Panel" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur"]
+margin_right = 275.0
+rect_min_size = Vector2( 275, 130 )
+custom_styles/panel = ExtResource( 16 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken"]
+margin_right = 275.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 0, 130 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="server_list" type="VBoxContainer" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/ScrollContainer"]
+margin_right = 275.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 275, 130 )
+
+[node name="scanning_network" type="Label" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken"]
+margin_right = 275.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+custom_fonts/font = SubResource( 178 )
+custom_styles/normal = SubResource( 179 )
+text = "Scanning local network..."
+align = 1
+
+[node name="Connect_blur" type="Panel" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+material = ExtResource( 10 )
+margin_top = 222.0
+margin_right = 275.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 0, 50 )
+custom_styles/panel = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DirectConnect" type="Button" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+text = " Connect to server"
+align = 0
+
+[node name="Back_blur" type="Panel" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+material = ExtResource( 10 )
+margin_top = 302.0
+margin_right = 275.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 0, 50 )
+custom_styles/panel = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackConnect" type="Button" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+text = " Back"
+align = 0
+
+[node name="Control" type="Control" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -4136,8 +4267,10 @@ __meta__ = {
 [connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Host_blur/PlayHost" to="." method="_on_PlayHost_pressed"]
 [connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackPlay" to="." method="_on_BackPlay_pressed"]
-[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur/Connect" to="." method="_on_Connect_pressed"]
-[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder/Connect" to="." method="_on_Connect_pressed"]
+[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackIP" to="." method="_on_BackIP_pressed"]
+[connection signal="pressed" from="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur/DirectConnect" to="." method="_on_DirectConnect_pressed"]
+[connection signal="pressed" from="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackConnect" to="." method="_on_BackConnect_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur/HBoxContainer/left" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur" method="_on_left_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur/HBoxContainer/right" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur" method="_on_right_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur/HBoxContainer/left" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur" method="_on_left_pressed"]

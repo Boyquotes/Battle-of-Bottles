@@ -40,6 +40,7 @@ Multiplayer="*res://scripts/mp_client.gd"
 Global="*res://scripts/global.gd"
 BackgroundLoader="*res://scripts/background_loader.gd"
 Mods="*res://scripts/mods.gd"
+BroadcastServer="*res://scenes/BroadcastServer.tscn"
 
 [display]
 

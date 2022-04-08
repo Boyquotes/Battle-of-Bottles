@@ -16,6 +16,7 @@ var current_hat
 onready var menu_main = $menu_main
 onready var menu_play = $menu_play
 onready var menu_server_ip = $menu_server_ip
+onready var menu_connect = $menu_connect
 onready var menu_host = $menu_host_server
 onready var menu_settings = $menu_settings
 onready var menu_customization = $menu_customization
@@ -25,7 +26,7 @@ onready var customization_animation = $"3D/rotation_helper/animation"
 onready var customization_character = $"3D/customization_player"
 onready var customization_title = $menu_customization/VBoxContainer/Label
 onready var username_edit = $menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Username_blur/Username
-onready var server_ip_line = $menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/server_ip_blur/Server_IP
+onready var server_ip_line = $menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/IP_blur/IP
 onready var max_players = $menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur
 onready var map_selection = $menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur
 onready var mods_list = $menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/ScrollContainer/mods_list
@@ -231,7 +232,7 @@ func _on_ToggleFullscreen_pressed():
 
 func _on_Join_pressed():
 	menu_play.hide()
-	menu_server_ip.show()
+	menu_connect.show()
 
 
 func _on_PlayHost_pressed():
@@ -267,3 +268,18 @@ func _on_Mods_pressed():
 	menu_settings.hide()
 	menu_mods.show()
 	menu_mods.show_mods()
+
+
+func _on_BackIP_pressed():
+	menu_server_ip.hide()
+	menu_connect.show()
+
+
+func _on_DirectConnect_pressed():
+	menu_server_ip.show()
+	menu_connect.hide()
+
+
+func _on_BackConnect_pressed():
+	menu_play.show()
+	menu_connect.hide()

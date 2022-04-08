@@ -82,6 +82,7 @@ func host_game(max_players, map):
 	current_map = map
 	connected = true
 	is_server = true
+	BroadcastServer.enable_broadcast()
 
 
 func stop_multiplayer():
@@ -92,6 +93,7 @@ func stop_multiplayer():
 	get_tree().network_peer = null
 	player_info = {}
 	Global.port = 0
+	BroadcastServer.disable_broadcast()
 
 
 func _player_connected(id):
