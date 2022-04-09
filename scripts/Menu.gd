@@ -33,7 +33,6 @@ onready var mods_list = $menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBo
 onready var mods_warning = $menu_mods/warning
 onready var camera_start_pos = camera_3d.global_transform.origin
 onready var custs: Dictionary = customization_character.customizations
-onready var local_server_ip = $menu_host_server/Control/server_ip
 
 
 func _ready():
@@ -60,14 +59,6 @@ func _ready():
 	if Global.settings.has("last_server"):
 		if Global.settings["last_server"] != "none":
 			server_ip_line.text = Global.settings["last_server"]
-	
-	var local_ip_address := ""
-	for address in IP.get_local_addresses():
-		if (address.split('.').size() == 4):
-			if address.split('.')[0].length() == 3:
-				local_ip_address = address
-	if local_ip_address != "":
-		local_server_ip.text = "Local Server IP: %s" % local_ip_address
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

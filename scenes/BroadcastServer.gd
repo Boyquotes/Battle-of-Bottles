@@ -32,6 +32,7 @@ func disable_broadcast():
 
 func broadcast():
 	if broadcast:
+		update_server_info()
 		var packet_message = to_json(server_info)
 		var packet = packet_message.to_ascii()
 		socket_udp.put_packet(packet)
@@ -41,3 +42,8 @@ func _exit_tree():
 	broadcast_timer.stop()
 	if socket_udp != null:
 		socket_udp.close()
+
+
+func update_server_info():
+	server_info["name"] = Global.settings["username"]
+	server_info["player_count"] = Multiplayer.player_info.keys().size() + 1

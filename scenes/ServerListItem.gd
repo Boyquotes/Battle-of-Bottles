@@ -18,9 +18,9 @@ func get_server_ip():
 
 
 func set_player_count(count: int):
-	$HBoxContainer/VBoxContainer/HBoxContainer2/VersionLabel.show()
-	$HBoxContainer/VBoxContainer/HBoxContainer2/Version.show()
-	$HBoxContainer/VBoxContainer/HBoxContainer2/Version.text = str(count)
+	$HBoxContainer/VBoxContainer/HBoxContainer2/PlayerCount.show()
+	$HBoxContainer/VBoxContainer/HBoxContainer2/Count.show()
+	$HBoxContainer/VBoxContainer/HBoxContainer2/Count.text = str(count)
 
 
 func _on_select_pressed():
