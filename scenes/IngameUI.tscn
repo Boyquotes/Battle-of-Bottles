@@ -73,9 +73,6 @@ bg_color = Color( 0, 0, 0, 0.294118 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Vignette" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0.498039 )

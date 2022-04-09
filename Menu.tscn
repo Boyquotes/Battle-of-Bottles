@@ -1,13 +1,11 @@
-[gd_scene load_steps=205 format=2]
+[gd_scene load_steps=204 format=2]
 
 [ext_resource path="res://scenes/OtherPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilemaps/Ground.tres" type="MeshLibrary" id=2]
 [ext_resource path="res://assets/tilemaps/Decoration.tres" type="MeshLibrary" id=3]
 [ext_resource path="res://assets/fonts/vegur/Vegur-Bold.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/styles/menu_buttons/font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/styles/menu_buttons/pressed.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/styles/menu_buttons/nromal.tres" type="StyleBox" id=7]
-[ext_resource path="res://assets/styles/menu_buttons/hover.tres" type="StyleBox" id=8]
 [ext_resource path="res://assets/textures/vignette.png" type="Texture" id=9]
 [ext_resource path="res://assets/styles/menu_buttons/blur.tres" type="Material" id=10]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=11]
@@ -24,6 +22,7 @@
 [ext_resource path="res://scripts/menu_mods.gd" type="Script" id=22]
 [ext_resource path="res://assets/textures/loading_spinner.png" type="Texture" id=23]
 [ext_resource path="res://scripts/menu_connect.gd" type="Script" id=24]
+[ext_resource path="res://scenes/menu_button.tscn" type="PackedScene" id=25]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "dirt"
@@ -2995,111 +2994,25 @@ size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="Play_blur" type="Panel" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
-margin_top = 62.0
-margin_right = 275.0
-margin_bottom = 112.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Play" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
+text = "Play"
 
-[node name="Play" type="Button" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Play_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Play"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Settings_blur" type="Panel" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Settings" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 142.0
-margin_right = 275.0
 margin_bottom = 192.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Settings"
 
-[node name="Settings" type="Button" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Settings_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Settings"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Customize_blur" type="Panel" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Customize" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
-margin_right = 275.0
 margin_bottom = 272.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Customize"
 
-[node name="Customize" type="Button" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Customize_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Customize"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Quit_blur" type="Panel" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Quit" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 302.0
-margin_right = 275.0
 margin_bottom = 352.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Quit"
 
-[node name="Quit" type="Button" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Quit"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control" type="Control" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -3159,8 +3072,8 @@ __meta__ = {
 }
 
 [node name="Username" type="LineEdit" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Username_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 50 )
 hint_tooltip = "Username"
 custom_fonts/font = ExtResource( 5 )
@@ -3170,89 +3083,23 @@ max_length = 20
 placeholder_text = " Username"
 placeholder_alpha = 0.4
 caret_blink = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="placeholder" type="Panel" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="ToggleFullscreen" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 142.0
-margin_right = 275.0
 margin_bottom = 192.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Toggle Fullscreen"
 
-[node name="ToggleFullscreen" type="Button" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Toggle Fullscreen"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="placeholder2" type="Panel" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Mods" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
-margin_right = 275.0
 margin_bottom = 272.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Mods"
 
-[node name="Mods" type="Button" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder2"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Mods"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Back_blur" type="Panel" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="BackSettings" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 302.0
-margin_right = 275.0
 margin_bottom = 352.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Back"
 
-[node name="BackSettings" type="Button" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Back"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control" type="Control" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -3348,38 +3195,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back_blur" type="Panel" parent="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="BackMods" parent="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 302.0
-margin_right = 275.0
 margin_bottom = 352.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Back"
 
-[node name="BackMods" type="Button" parent="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Back"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AcceptDialog" type="AcceptDialog" parent="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 83.0
-margin_bottom = 58.0
-window_title = "Warnung!"
-
-[node name="Control" type="Control" parent="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -3625,83 +3446,18 @@ size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="Host_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
-margin_top = 62.0
-margin_right = 275.0
-margin_bottom = 112.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PlayHost" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
+text = "Host"
 
-[node name="PlayHost" type="Button" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Host_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Host"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Join_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Join" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 142.0
-margin_right = 275.0
 margin_bottom = 192.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Join"
 
-[node name="Join" type="Button" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = "  Join"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Back_blur" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="BackPlay" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
-margin_right = 275.0
 margin_bottom = 272.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackPlay" type="Button" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Back"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Back"
 
 [node name="placeholder" type="Panel" parent="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 302.0
@@ -3727,9 +3483,6 @@ margin_left = 30.0
 margin_top = 30.0
 margin_right = -30.0
 margin_bottom = -30.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="menu_server_ip"]
 margin_right = 964.0
@@ -3788,56 +3541,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="placeholder" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Connect" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 142.0
-margin_right = 275.0
 margin_bottom = 192.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Connect"
 
-[node name="Connect" type="Button" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Connect"
-align = 0
-
-[node name="Back_blur" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="BackIP" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
-margin_right = 275.0
 margin_bottom = 272.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Back"
 
-[node name="BackIP" type="Button" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Back"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="placeholder2" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="placeholder" type="Panel" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 material = ExtResource( 10 )
 margin_top = 302.0
 margin_right = 275.0
@@ -3848,7 +3562,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -3954,53 +3668,17 @@ custom_styles/normal = SubResource( 179 )
 text = "Scanning local network..."
 align = 1
 
-[node name="Connect_blur" type="Panel" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="DirectConnect" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
-margin_right = 275.0
 margin_bottom = 272.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Connect to server"
 
-[node name="DirectConnect" type="Button" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Connect to server"
-align = 0
-
-[node name="Back_blur" type="Panel" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="BackConnect" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 302.0
-margin_right = 275.0
 margin_bottom = 352.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Back"
 
-[node name="BackConnect" type="Button" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Back"
-align = 0
-
-[node name="Control" type="Control" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -4181,59 +3859,17 @@ texture_normal = ExtResource( 14 )
 expand = true
 stretch_mode = 5
 
-[node name="placeholder" type="Panel" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="Host" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
-margin_right = 275.0
 margin_bottom = 272.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Host"
 
-[node name="Host" type="Button" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Host"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Back_blur" type="Panel" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-material = ExtResource( 10 )
+[node name="BackHost" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 302.0
-margin_right = 275.0
 margin_bottom = 352.0
-rect_min_size = Vector2( 0, 50 )
-custom_styles/panel = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Back"
 
-[node name="BackHost" type="Button" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur"]
-margin_right = 275.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = ExtResource( 5 )
-custom_styles/hover = ExtResource( 8 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = ExtResource( 7 )
-custom_styles/normal = ExtResource( 7 )
-text = " Back"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control" type="Control" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 279.0
 margin_right = 554.0
 margin_bottom = 415.0
@@ -4255,16 +3891,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Play_blur/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Settings_blur/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Customize_blur/Customize" to="." method="_on_Customize_pressed"]
-[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit_blur/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder/ToggleFullscreen" to="." method="_on_ToggleFullscreen_pressed"]
-[connection signal="pressed" from="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder2/Mods" to="." method="_on_Mods_pressed"]
-[connection signal="pressed" from="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackSettings" to="." method="_on_BackSettings_pressed"]
+[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Customize" to="." method="_on_Customize_pressed"]
+[connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/ToggleFullscreen" to="." method="_on_ToggleFullscreen_pressed"]
+[connection signal="pressed" from="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Mods" to="." method="_on_Mods_pressed"]
+[connection signal="pressed" from="menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackSettings" to="." method="_on_BackSettings_pressed"]
 [connection signal="pressed" from="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/no_mods" to="menu_mods" method="_on_no_mods_pressed"]
-[connection signal="pressed" from="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackMods" to="." method="_on_BackMods_pressed"]
-[connection signal="pressed" from="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackMods" to="menu_mods" method="_on_BackMods_pressed"]
+[connection signal="pressed" from="menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackMods" to="." method="_on_BackMods_pressed"]
 [connection signal="pressed" from="menu_mods/warning/VBoxContainer/CenterContainer/Continue" to="menu_mods" method="_on_Continue_pressed"]
 [connection signal="pressed" from="menu_mods/warning/VBoxContainer/CenterContainer/Cancel" to="menu_mods" method="_on_Cancel_pressed"]
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer/CenterContainer/left_cust" to="." method="_on_left_cust_pressed"]
@@ -4273,16 +3908,16 @@ __meta__ = {
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer3/CenterContainer2/right_bottle" to="." method="_on_right_bottle_pressed"]
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer2/cancel_blur/CancelCustomization" to="." method="_on_CancelCustomization_pressed"]
 [connection signal="pressed" from="menu_customization/VBoxContainer/HBoxContainer2/apply_blur/Apply" to="." method="_on_Apply_pressed"]
-[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Host_blur/PlayHost" to="." method="_on_PlayHost_pressed"]
-[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join_blur/Join" to="." method="_on_Join_pressed"]
-[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackPlay" to="." method="_on_BackPlay_pressed"]
-[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder/Connect" to="." method="_on_Connect_pressed"]
-[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackIP" to="." method="_on_BackIP_pressed"]
-[connection signal="pressed" from="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect_blur/DirectConnect" to="." method="_on_DirectConnect_pressed"]
-[connection signal="pressed" from="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackConnect" to="." method="_on_BackConnect_pressed"]
+[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/PlayHost" to="." method="_on_PlayHost_pressed"]
+[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Join" to="." method="_on_Join_pressed"]
+[connection signal="pressed" from="menu_play/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackPlay" to="." method="_on_BackPlay_pressed"]
+[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Connect" to="." method="_on_Connect_pressed"]
+[connection signal="pressed" from="menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackIP" to="." method="_on_BackIP_pressed"]
+[connection signal="pressed" from="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DirectConnect" to="." method="_on_DirectConnect_pressed"]
+[connection signal="pressed" from="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackConnect" to="." method="_on_BackConnect_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur/HBoxContainer/left" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur" method="_on_left_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur/HBoxContainer/right" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur" method="_on_right_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur/HBoxContainer/left" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur" method="_on_left_pressed"]
 [connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur/HBoxContainer/right" to="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur" method="_on_right_pressed"]
-[connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/placeholder/Host" to="." method="_on_Host_pressed"]
-[connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back_blur/BackHost" to="." method="_on_BackHost_pressed"]
+[connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Host" to="." method="_on_Host_pressed"]
+[connection signal="pressed" from="menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackHost" to="." method="_on_BackHost_pressed"]
