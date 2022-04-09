@@ -7,7 +7,7 @@ var known_servers = []
 var server_list_item_scene = preload("res://scenes/ServerListItem.tscn")
 
 onready var server_list = $HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/ScrollContainer/server_list
-onready var scanning_text = $HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/scanning_network
+onready var connect_loading = $HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/loading
 
 
 func _ready():
@@ -33,7 +33,7 @@ func _process(delta):
 				server_list_item.set_player_count(int(info["player_count"]))
 			server_list_item.connect("join_server", self, "join_server")
 			server_list.add_child(server_list_item)
-			scanning_text.hide()
+			connect_loading.hide()
 			known_servers.append(server_ip)
 			socket_udp.close()
 
