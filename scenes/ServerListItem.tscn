@@ -83,6 +83,7 @@ size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
 text = "Server Name"
 valign = 1
+clip_text = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 37.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=2]
+[gd_scene load_steps=205 format=2]
 
 [ext_resource path="res://scenes/OtherPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilemaps/Ground.tres" type="MeshLibrary" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/lightmap_data/Menu.lmbake" type="BakedLightmapData" id=20]
 [ext_resource path="res://assets/fonts/vegur/Vegur-Regular.otf" type="DynamicFontData" id=21]
 [ext_resource path="res://scripts/menu_mods.gd" type="Script" id=22]
+[ext_resource path="res://assets/textures/loading_spinner.png" type="Texture" id=23]
 [ext_resource path="res://scripts/menu_connect.gd" type="Script" id=24]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -3916,6 +3917,7 @@ custom_styles/panel = ExtResource( 16 )
 margin_right = 275.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 0, 130 )
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -3925,8 +3927,26 @@ margin_right = 275.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 275, 130 )
 
-[node name="scanning_network" type="Label" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken"]
-margin_right = 275.0
+[node name="loading" type="HBoxContainer" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken"]
+anchor_right = 1.0
+margin_top = 2.5
+margin_bottom = 22.5
+alignment = 1
+
+[node name="spinner_anchor" type="Control" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/loading"]
+margin_left = 44.0
+margin_right = 64.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Sprite" type="Sprite" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/loading/spinner_anchor"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 23 )
+
+[node name="scanning_network" type="Label" parent="menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/loading"]
+margin_left = 68.0
+margin_right = 230.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 custom_fonts/font = SubResource( 178 )

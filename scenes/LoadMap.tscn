@@ -10,9 +10,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="background" type="TextureRect" parent="."]
 modulate = Color( 0.780392, 0.780392, 0.780392, 1 )
@@ -64,9 +61,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -32.0
 margin_top = -32.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="loading_spinner" type="Sprite" parent="loading_anchor"]
 scale = Vector2( 0.25, 0.25 )

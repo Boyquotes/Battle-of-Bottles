@@ -3,6 +3,7 @@ extends Control
 
 const CAMERA_SHAKE_SPEED = 35
 const CAMERA_SHAKE_INTENSITY = 0.01
+const LOADING_SPINNER_SPEED = 400
 
 var noise = OpenSimplexNoise.new()
 var customizing = false
@@ -30,6 +31,7 @@ onready var server_ip_line = $menu_server_ip/HBoxContainer/VBoxContainer/HBoxCon
 onready var max_players = $menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur
 onready var map_selection = $menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Map_blur
 onready var mods_list = $menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/ScrollContainer/mods_list
+onready var menu_connect_loading_spinner = $menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/loading/spinner_anchor/Sprite
 onready var mods_warning = $menu_mods/warning
 onready var camera_start_pos = camera_3d.global_transform.origin
 onready var custs: Dictionary = customization_character.customizations
@@ -106,6 +108,8 @@ func _process(delta):
 	camera_3d.global_transform.origin.z = camera_start_pos.z + noise.get_noise_3d(0, 0, t * CAMERA_SHAKE_SPEED) * CAMERA_SHAKE_INTENSITY * 10
 	if customizing:
 		$"3D/customization_player".rotation_degrees.y -= delta * 360 * 0.075
+	if menu_connect.visible:
+		menu_connect_loading_spinner.rotation_degrees += delta * LOADING_SPINNER_SPEED
 
 
 func _on_Back_pressed():
