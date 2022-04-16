@@ -12,7 +12,8 @@ onready var loading_spinner = $loading_anchor/loading_spinner
 func _ready():
 	loading_text.text = CONNECTING_TEXT
 	Multiplayer.connect("loading_map", self, "on_multiplayer_loading_map")
-	Multiplayer.activate_multiplayer(Global.IP, Global.port)
+	if Multiplayer.activate_multiplayer(Global.IP, Global.port) != 0:
+		_on_connection_timeout_timeout()
 
 
 func on_multiplayer_loading_map(map_name):
@@ -30,6 +31,5 @@ func _process(delta):
 
 func _on_connection_timeout_timeout():
 	if loading_text.text == CONNECTING_TEXT:
-		# Connection timeout
-		get_tree().network_peer = null
-		get_tree().change_scene("res://scenes/ConnectionFailed.tscn")
+		# dunno what that if statement means, nvm
+		Multiplayer.connection_failed()

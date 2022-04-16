@@ -56,33 +56,46 @@ func _ready():
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 
 
-func activate_multiplayer(ip: String, port: int):
+func activate_multiplayer(ip: String, port: int) -> int:
 	print("client")
 	my_info = { "name": Global.settings["username"], "customizations": Global.user_customization, "mods": Mods.get_active().keys()}
 	var peer = NetworkedMultiplayerENet.new()
+	var error: int
 	if port == 0:
-		print(peer.create_client(ip, DEFAULT_SERVER_PORT))
+		error = peer.create_client(ip, DEFAULT_SERVER_PORT)
 	else:
-		print(peer.create_client(ip, port))
+		error = peer.create_client(ip, port)
 	get_tree().network_peer = peer
 	is_server = false
+	
+	return error
 
 
-func host_game(max_players, map):
+func host_game(max_players, map) -> int:
 	print("server")
 	my_info = { "name": Global.settings["username"], "customizations": Global.user_customization, "mods": Mods.get_active().keys()}
-	var peer = NetworkedMultiplayerENet.new()
-	print(peer.create_server(DEFAULT_SERVER_PORT, max_players))
-	get_tree().network_peer = peer
-	is_bottle_master = true
-	is_zombie_master = true
 	if maps.has(map):
-		#get_tree().change_scene_to(load(maps[map][1]))
+		var peer = NetworkedMultiplayerENet.new()
+		var error: int = peer.create_server(DEFAULT_SERVER_PORT, max_players)
+		if error != 0:
+			return error
+		get_tree().network_peer = peer
+		is_bottle_master = true
+		is_zombie_master = true
+		
 		BackgroundLoader.load_scene(maps[map][1])
-	current_map = map
-	connected = true
-	is_server = true
-	BroadcastServer.enable_broadcast()
+		current_map = map
+		connected = true
+		is_server = true
+		BroadcastServer.enable_broadcast()
+		return 0
+	else:
+		return -1
+
+
+func connection_failed():
+	get_tree().network_peer = null
+	get_tree().change_scene("res://scenes/ConnectionFailed.tscn")
 
 
 func stop_multiplayer():

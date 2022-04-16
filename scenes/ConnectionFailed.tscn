@@ -68,4 +68,4 @@ anchor_bottom = 0.0
 margin_top = 535.0
 margin_right = 984.0
 margin_bottom = 560.0
-text = "Connection timed out, returning to main menu."
+text = "Connection failed, returning to main menu."

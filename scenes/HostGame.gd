@@ -7,7 +7,8 @@ onready var loading_spinner = $loading_anchor/loading_spinner
 
 
 func _ready():
-	Multiplayer.host_game(Global.max_players, Global.map)
+	if Multiplayer.host_game(Global.max_players, Global.map) != 0:
+		Multiplayer.connection_failed()
 
 
 func _process(delta):
