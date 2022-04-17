@@ -51,6 +51,7 @@ func load_mod(filename: String) -> bool:
 				file.open("res://" + filename.replace(".pck", ".json"), File.READ)
 				var mod_manifest = parse_json(file.get_as_text())
 				mods_info[filename] = mod_manifest
+				mods_info[filename]["scene"] = mod_instance
 				call_deferred("add_mod", mod_instance)
 				if mod_manifest.keys().has("name") and mod_manifest.keys().has("version"):
 					print(mod_manifest["name"] + " successfully loaded, version " + mod_manifest["version"])
@@ -79,6 +80,7 @@ func activate_mod(filename: String) -> bool:
 
 func deactivate_mod(filename: String):
 	Global.settings["active_mods"].erase(filename)
+	mods_info[filename]["scene"].queue_free()
 	mods_info.erase(filename)
 	Global.save_settings()
 
