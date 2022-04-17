@@ -26,6 +26,7 @@ onready var camera_3d = $"3D/rotation_helper/Camera"
 onready var customization_animation = $"3D/rotation_helper/animation"
 onready var customization_character = $"3D/customization_player"
 onready var customization_title = $menu_customization/VBoxContainer/Label
+onready var bottle_title = $menu_customization/VBoxContainer/BottleName
 onready var username_edit = $menu_settings/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Username_blur/Username
 onready var server_ip_line = $menu_server_ip/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/IP_blur/IP
 onready var max_players = $menu_host_server/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/MaxPlayers_blur
@@ -54,6 +55,8 @@ func _ready():
 	
 	if custs["hats"].has(current_hat):
 		customization_title.text = custs["hats"][current_hat][0]
+	if custs["hats"].has(current_hat):
+		bottle_title.text = custs["bottles"][current_bottle][0]
 	
 	if Global.settings != null and Global.settings.has("username"):
 		username_edit.text = Global.settings["username"]
@@ -199,6 +202,7 @@ func update_bottle(index):
 	"hats": current_hat,
 	"bottles": current_bottle
 	}
+	bottle_title.text = custs["bottles"][current_bottle][0]
 	customization_character.customization_reset()
 	customization_character.customize(own_customization)
 
