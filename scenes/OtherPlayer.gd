@@ -16,10 +16,10 @@ const customizations = {
 		"sunglasses": ["Sunglasses", preload("res://assets/customizations/Sunglasses.tscn")]
 	},
 	"bottles": {
-		"default_bottle": ["Default", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
-		"ketchup_bottle": ["\"Ketchup\"", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
-		"superbottle": ["Superbottle", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
-		"cyberbottle": ["cYbErBOTTLE", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
+		"default_bottle": ["Default - What have I done to you?", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
+		"ketchup_bottle": ["\"Ketchup\" - It's ketchup, nothing else", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
+		"superbottle": ["Superbottle - Oh lord, what a beast", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
+		"cyberbottle": ["CYBERBOTTLE - (almost) unbreakable", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
 	}
 }
 
