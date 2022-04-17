@@ -2757,6 +2757,7 @@ sky_energy = 4.08
 background_mode = 2
 background_sky = SubResource( 168 )
 background_energy = 0.11
+ss_reflections_enabled = true
 ssao_enabled = true
 ssao_quality = 2
 dof_blur_far_distance = 3.0
@@ -3895,9 +3896,6 @@ custom_fonts/font = SubResource( 176 )
 text = "Copyright (c) 2020 - 2022 nokoe, tpart."
 align = 2
 valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]

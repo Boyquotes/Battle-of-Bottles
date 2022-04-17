@@ -5,7 +5,7 @@ const DIRT_PARTICLES_SCENE = preload("res://assets/particles/dirt_particles.tscn
 
 var id
 var current_weapon = "machinegun"
-onready var customizations = {
+const customizations = {
 	"hats": {
 		"": ["none", null],
 		"pizza": ["Italian Hat", preload("res://assets/customizations/Pizza.tscn")],
@@ -18,7 +18,8 @@ onready var customizations = {
 	"bottles": {
 		"default_bottle": ["Default", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
 		"ketchup_bottle": ["\"Ketchup\"", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
-		"superbottle": ["Superbottle", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")]
+		"superbottle": ["Superbottle", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
+		"cyberbottle": ["cYbErBOTTLE", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
 	}
 }
 

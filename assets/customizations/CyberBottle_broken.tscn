@@ -1,0 +1,946 @@
+[gd_scene load_steps=70 format=2]
+
+[ext_resource path="res://assets/bottles/backlight.material" type="Material" id=1]
+[ext_resource path="res://assets/bottles/cybercolour.material" type="Material" id=2]
+[ext_resource path="res://assets/customizations/Free.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/customizations/DefaultBottle_broken.gd" type="Script" id=4]
+[ext_resource path="res://assets/customizations/smash.tscn" type="PackedScene" id=5]
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "cyberbottle_broken_Cube001"
+surfaces/0 = {
+"aabb": AABB( -0.0858548, -0.0765821, -0.00123639, 0.171849, 0.166867, 0.00228526 ),
+"array_data": PoolByteArray( 75, 254, 47, 189, 216, 225, 184, 61, 128, 14, 162, 186, 0, 1, 232, 115, 149, 54, 49, 45, 73, 144, 48, 61, 216, 225, 184, 61, 128, 14, 162, 186, 0, 1, 247, 122, 149, 54, 103, 49, 161, 212, 175, 189, 16, 215, 156, 189, 64, 122, 137, 58, 0, 1, 253, 126, 0, 54, 0, 0, 159, 29, 176, 61, 16, 215, 156, 189, 64, 122, 137, 58, 0, 1, 10, 122, 0, 54, 0, 52 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=33]
+points = PoolVector3Array( 0.0430991, 0.0902582, -0.00123639, 0.085994, -0.0765821, 0.00104887, -0.0429767, 0.0902582, -0.00123639, -0.0858548, -0.0765821, 0.00104887 )
+
+[sub_resource type="ArrayMesh" id=2]
+resource_name = "cyberbottle_broken_Cube002"
+surfaces/0 = {
+"aabb": AABB( -1, -1, -1, 2, 2, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 129, 0, 0, 127, 0, 54, 0, 60, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 0, 129, 127, 63, 0, 48, 0, 52, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 127, 0, 54, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 129, 0, 0, 127, 0, 57, 0, 60, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 127, 0, 57, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 127, 129, 63, 0, 59, 0, 52, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 129, 0, 0, 127, 0, 54, 0, 58, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 0, 129, 127, 63, 0, 48, 0, 56, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 127, 127, 0, 127, 0, 54, 0, 58, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 129, 0, 0, 127, 0, 57, 0, 58, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 127, 127, 0, 127, 0, 57, 0, 58, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 0, 127, 129, 63, 0, 59, 0, 56, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 129, 127, 63, 0, 54, 0, 52, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 127, 0, 54, 0, 52, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 127, 0, 0, 127, 0, 54, 0, 52, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 127, 0, 57, 0, 52, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 127, 129, 63, 0, 57, 0, 52, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 127, 0, 0, 127, 0, 57, 0, 52, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 0, 129, 127, 63, 0, 54, 0, 56, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 127, 127, 0, 127, 0, 54, 0, 56, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 127, 0, 0, 127, 0, 54, 0, 56, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 127, 127, 0, 127, 0, 57, 0, 56, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 127, 129, 63, 0, 57, 0, 56, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 127, 0, 0, 127, 0, 57, 0, 56 ),
+"array_index_data": PoolByteArray( 0, 0, 9, 0, 3, 0, 0, 0, 6, 0, 9, 0, 8, 0, 21, 0, 10, 0, 8, 0, 19, 0, 21, 0, 20, 0, 17, 0, 23, 0, 20, 0, 14, 0, 17, 0, 13, 0, 4, 0, 15, 0, 13, 0, 2, 0, 4, 0, 7, 0, 12, 0, 18, 0, 7, 0, 1, 0, 12, 0, 22, 0, 5, 0, 11, 0, 22, 0, 16, 0, 5, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 36,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ConvexPolygonShape" id=34]
+points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
+
+[sub_resource type="ArrayMesh" id=3]
+resource_name = "cyberbottle_broken_Cube005"
+surfaces/0 = {
+"aabb": AABB( -0.0702305, -0.0913242, -0.00103449, 0.140558, 0.166857, 0.00229526 ),
+"array_data": PoolByteArray( 161, 183, 2, 189, 40, 8, 187, 189, 0, 241, 163, 58, 0, 1, 239, 119, 181, 56, 242, 45, 6, 213, 143, 189, 184, 176, 154, 61, 192, 151, 135, 186, 0, 1, 11, 122, 0, 57, 0, 0, 115, 29, 3, 61, 40, 8, 187, 189, 0, 241, 163, 58, 0, 1, 224, 111, 181, 56, 6, 49, 238, 7, 144, 61, 184, 176, 154, 61, 192, 151, 135, 186, 0, 1, 253, 126, 0, 57, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=35]
+points = PoolVector3Array( -0.0702305, 0.0755324, -0.00103449, 0.0703139, 0.0755324, -0.00103449, -0.0319265, -0.0913242, 0.00125077, 0.0320098, -0.0913242, 0.00125077 )
+
+[sub_resource type="ArrayMesh" id=4]
+resource_name = "cyberbottle_broken_Cube006"
+surfaces/0 = {
+"aabb": AABB( -0.085994, -0.0765821, -0.00104887, 0.171849, 0.166867, 0.00229526 ),
+"array_data": PoolByteArray( 73, 144, 48, 189, 216, 225, 184, 61, 128, 14, 162, 58, 125, 127, 8, 122, 149, 54, 89, 57, 159, 29, 176, 189, 16, 215, 156, 189, 64, 122, 137, 186, 125, 127, 247, 121, 0, 54, 0, 58, 75, 254, 47, 61, 216, 225, 184, 61, 128, 14, 162, 58, 125, 127, 22, 114, 149, 54, 166, 56, 161, 212, 175, 61, 16, 215, 156, 189, 64, 122, 137, 186, 125, 127, 1, 125, 0, 54, 0, 56 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=36]
+points = PoolVector3Array( 0.0429599, 0.0902582, 0.00123639, 0.0858548, -0.0765821, -0.00104887, -0.0431159, 0.0902582, 0.00123639, -0.085994, -0.0765821, -0.00104887 )
+
+[sub_resource type="ArrayMesh" id=5]
+resource_name = "cyberbottle_broken_Cube007"
+surfaces/0 = {
+"aabb": AABB( -0.0703276, -0.0913242, -0.00125077, 0.140558, 0.166857, 0.00228526 ),
+"array_data": PoolByteArray( 115, 29, 3, 189, 40, 8, 187, 189, 0, 241, 163, 186, 125, 127, 30, 110, 181, 56, 65, 57, 238, 7, 144, 189, 184, 176, 154, 61, 192, 151, 135, 58, 125, 127, 1, 125, 0, 57, 0, 58, 161, 183, 2, 61, 40, 8, 187, 189, 0, 241, 163, 186, 125, 127, 15, 118, 181, 56, 190, 56, 6, 213, 143, 61, 184, 176, 154, 61, 192, 151, 135, 58, 125, 127, 247, 121, 0, 57, 0, 56 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=37]
+points = PoolVector3Array( -0.0703276, 0.0755324, 0.00103449, 0.0702168, 0.0755324, 0.00103449, -0.0320236, -0.0913242, -0.00125077, 0.0319128, -0.0913242, -0.00125077 )
+
+[sub_resource type="ArrayMesh" id=6]
+resource_name = "cyberbottle_broken_Cube008"
+surfaces/0 = {
+"aabb": AABB( -0.0255529, -0.205689, -0.00810831, 0.0539624, 0.369664, 0.0156453 ),
+"array_data": PoolByteArray( 188, 53, 109, 188, 192, 14, 31, 189, 64, 207, 190, 187, 119, 126, 251, 120, 149, 54, 166, 56, 14, 187, 232, 60, 36, 160, 82, 190, 184, 216, 4, 188, 119, 126, 252, 120, 0, 54, 0, 56, 94, 84, 209, 188, 0, 218, 60, 187, 192, 22, 172, 59, 119, 126, 245, 117, 181, 56, 190, 56, 236, 32, 81, 60, 8, 233, 39, 62, 240, 248, 246, 59, 119, 126, 249, 119, 0, 57, 0, 56 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=38]
+points = PoolVector3Array( -0.0255529, -0.00290942, 0.00525054, 0.0127638, 0.163975, 0.007537, -0.0144815, -0.0388409, -0.00582338, 0.0284095, -0.205689, -0.00810831 )
+
+[sub_resource type="ArrayMesh" id=7]
+resource_name = "cyberbottle_broken_Cube009"
+surfaces/0 = {
+"aabb": AABB( -0.0386034, -0.0483077, 0, 0.0772067, 0.0966155, 1e-05 ),
+"array_data": PoolByteArray( 142, 30, 30, 189, 88, 222, 69, 189, 0, 0, 0, 128, 0, 0, 127, 193, 0, 57, 0, 0, 142, 30, 30, 61, 88, 222, 69, 189, 0, 0, 0, 128, 0, 0, 127, 193, 0, 57, 0, 52, 142, 30, 30, 189, 88, 222, 69, 61, 0, 0, 0, 128, 0, 0, 127, 193, 0, 57, 0, 0, 142, 30, 30, 61, 88, 222, 69, 61, 0, 0, 0, 128, 0, 0, 127, 193, 0, 57, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=39]
+points = PoolVector3Array( -0.0386034, -0.0483077, 0, 0.0386034, -0.0483077, 0, -0.0386034, 0.0483077, 0, 0.0386034, 0.0483077, 0 )
+
+[sub_resource type="ArrayMesh" id=8]
+resource_name = "cyberbottle_broken_Cube010"
+surfaces/0 = {
+"aabb": AABB( -0.0386034, -0.0483077, 0, 0.0772067, 0.0966155, 1e-05 ),
+"array_data": PoolByteArray( 142, 30, 30, 189, 88, 222, 69, 189, 0, 0, 0, 128, 127, 127, 127, 63, 0, 57, 0, 58, 142, 30, 30, 61, 88, 222, 69, 189, 0, 0, 0, 128, 127, 127, 127, 63, 0, 57, 0, 56, 142, 30, 30, 189, 88, 222, 69, 61, 0, 0, 0, 128, 127, 127, 127, 63, 0, 57, 0, 58, 142, 30, 30, 61, 88, 222, 69, 61, 0, 0, 0, 128, 127, 127, 127, 63, 0, 57, 0, 56 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=40]
+points = PoolVector3Array( -0.0386034, -0.0483077, 0, 0.0386034, -0.0483077, 0, -0.0386034, 0.0483077, 0, 0.0386034, 0.0483077, 0 )
+
+[sub_resource type="ArrayMesh" id=9]
+resource_name = "cyberbottle_broken_Cube011"
+surfaces/0 = {
+"aabb": AABB( -0.00759307, -0.16613, -0.0279521, 0.0156453, 0.369664, 0.0572817 ),
+"array_data": PoolByteArray( 144, 160, 188, 187, 192, 65, 135, 188, 166, 232, 130, 188, 137, 7, 18, 123, 120, 54, 122, 59, 80, 207, 248, 187, 224, 29, 42, 190, 166, 68, 240, 60, 137, 7, 13, 123, 0, 54, 0, 60, 80, 172, 203, 59, 128, 214, 92, 61, 226, 251, 228, 188, 137, 7, 12, 123, 195, 56, 102, 59, 136, 237, 3, 60, 76, 107, 80, 62, 28, 52, 96, 60, 137, 7, 12, 123, 0, 57, 0, 60 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=41]
+points = PoolVector3Array( -0.00759307, -0.16613, 0.0293296, -0.00575686, -0.0165416, -0.0159811, 0.00621449, 0.0539102, -0.0279521, 0.00805224, 0.203534, 0.0136803 )
+
+[sub_resource type="ArrayMesh" id=10]
+resource_name = "cyberbottle_broken_Cube012"
+surfaces/0 = {
+"aabb": AABB( -0.00100505, -0.0818747, -0.0708123, 0.00183663, 0.149619, 0.140558 ),
+"array_data": PoolByteArray( 192, 187, 131, 186, 240, 173, 167, 189, 172, 69, 230, 60, 131, 1, 2, 126, 195, 56, 102, 59, 128, 254, 89, 58, 104, 189, 138, 61, 231, 214, 142, 61, 131, 1, 1, 126, 0, 57, 0, 60, 192, 187, 131, 186, 240, 173, 167, 189, 76, 2, 239, 188, 131, 1, 1, 126, 195, 56, 153, 58, 128, 254, 89, 58, 104, 189, 138, 61, 13, 6, 145, 189, 131, 1, 1, 126, 0, 57, 0, 58 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=42]
+points = PoolVector3Array( 0.000831582, 0.0677441, 0.0697321, 0.000831582, 0.0677441, -0.0708123, -0.00100505, -0.0818747, 0.0280985, -0.00100505, -0.0818747, -0.0291787 )
+
+[sub_resource type="ArrayMesh" id=11]
+resource_name = "cyberbottle_broken_Cube013"
+surfaces/0 = {
+"aabb": AABB( -0.00805223, -0.203534, -0.0297888, 0.0156453, 0.369664, 0.0572917 ),
+"array_data": PoolByteArray( 160, 160, 188, 59, 192, 65, 135, 60, 244, 56, 225, 60, 137, 7, 7, 119, 195, 56, 153, 58, 96, 207, 248, 59, 228, 29, 42, 62, 232, 185, 103, 188, 137, 7, 7, 120, 0, 57, 0, 58, 64, 172, 203, 187, 128, 214, 92, 189, 112, 75, 126, 60, 137, 7, 7, 120, 120, 54, 133, 58, 128, 237, 3, 188, 72, 107, 80, 190, 140, 7, 244, 188, 137, 7, 7, 120, 0, 54, 0, 58 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=43]
+points = PoolVector3Array( 0.00575534, 0.0165055, 0.027493, 0.00759308, 0.16613, -0.0141451, -0.00621602, -0.0539463, 0.0155163, -0.00805223, -0.203534, -0.0297888 )
+
+[sub_resource type="ArrayMesh" id=12]
+resource_name = "cyberbottle_broken_Cube014"
+surfaces/0 = {
+"aabb": AABB( -0.000918314, -0.0748094, -0.0859244, 0.00183663, 0.149629, 0.171849 ),
+"array_data": PoolByteArray( 0, 187, 112, 186, 168, 53, 153, 61, 157, 91, 38, 189, 125, 1, 255, 126, 120, 54, 245, 54, 0, 187, 112, 58, 168, 53, 153, 189, 32, 249, 175, 189, 125, 1, 255, 125, 0, 54, 0, 56, 0, 187, 112, 186, 168, 53, 153, 61, 155, 91, 38, 61, 125, 1, 254, 126, 120, 54, 10, 53, 0, 187, 112, 58, 168, 53, 153, 189, 32, 249, 175, 61, 125, 1, 255, 126, 0, 54, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=44]
+points = PoolVector3Array( 0.000918314, -0.0748094, -0.0859244, -0.000918314, 0.0747947, -0.040624, 0.000918314, -0.0748094, 0.0859244, -0.000918314, 0.0747947, 0.0406072 )
+
+[sub_resource type="ArrayMesh" id=13]
+resource_name = "cyberbottle_broken_Cube015"
+surfaces/0 = {
+"aabb": AABB( -0.000831582, -0.0818747, -0.0697458, 0.00184663, 0.149619, 0.140558 ),
+"array_data": PoolByteArray( 192, 187, 131, 58, 240, 173, 167, 189, 175, 69, 230, 188, 125, 1, 255, 125, 195, 56, 205, 54, 128, 254, 89, 186, 104, 189, 138, 61, 230, 214, 142, 189, 125, 1, 255, 126, 0, 57, 0, 56, 192, 187, 131, 58, 240, 173, 167, 189, 73, 2, 239, 60, 125, 1, 255, 126, 195, 56, 50, 53, 128, 254, 89, 186, 104, 189, 138, 61, 14, 6, 145, 61, 125, 1, 255, 126, 0, 57, 0, 52 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=45]
+points = PoolVector3Array( -0.000831582, 0.0677441, 0.0707986, -0.000831582, 0.0677441, -0.0697458, 0.00100505, -0.0818747, 0.029165, 0.00100505, -0.0818747, -0.0281122 )
+
+[sub_resource type="ArrayMesh" id=14]
+resource_name = "cyberbottle_broken_Cube016"
+surfaces/0 = {
+"aabb": AABB( -0.00759308, -0.203534, -0.027493, 0.0156453, 0.369664, 0.0572817 ),
+"array_data": PoolByteArray( 160, 160, 188, 187, 192, 65, 135, 60, 248, 56, 225, 188, 119, 7, 241, 123, 195, 56, 50, 53, 96, 207, 248, 187, 228, 29, 42, 62, 240, 185, 103, 60, 119, 7, 243, 123, 0, 57, 0, 52, 64, 172, 203, 59, 128, 214, 92, 189, 120, 75, 126, 188, 119, 7, 244, 123, 120, 54, 10, 53, 128, 237, 3, 60, 72, 107, 80, 190, 144, 7, 244, 60, 119, 7, 244, 123, 0, 54, 0, 52 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=46]
+points = PoolVector3Array( 0.00805223, -0.203534, 0.0297888, 0.00621449, -0.0539463, -0.0155219, -0.00759308, 0.16613, 0.0141395, -0.00575687, 0.0165055, -0.027493 )
+
+[sub_resource type="ArrayMesh" id=15]
+resource_name = "cyberbottle_broken_Cube017"
+surfaces/0 = {
+"aabb": AABB( -0.0859244, 0, -0.0859244, 0.171849, 1e-05, 0.171849 ),
+"array_data": PoolByteArray( 32, 249, 175, 189, 0, 0, 0, 0, 32, 249, 175, 189, 0, 129, 127, 63, 0, 48, 0, 56, 32, 249, 175, 189, 0, 0, 0, 0, 32, 249, 175, 61, 0, 129, 127, 63, 0, 48, 0, 52, 32, 249, 175, 61, 0, 0, 0, 0, 32, 249, 175, 189, 0, 129, 127, 63, 0, 54, 0, 56, 32, 249, 175, 61, 0, 0, 0, 0, 32, 249, 175, 61, 0, 129, 127, 63, 0, 54, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=47]
+points = PoolVector3Array( -0.0859244, 0, -0.0859244, -0.0859244, 0, 0.0859244, 0.0859244, 0, -0.0859244, 0.0859244, 0, 0.0859244 )
+
+[sub_resource type="ArrayMesh" id=16]
+resource_name = "cyberbottle_broken_Cube018"
+surfaces/0 = {
+"aabb": AABB( -0.0278382, -0.163975, -0.007537, 0.0539624, 0.369664, 0.0156453 ),
+"array_data": PoolByteArray( 234, 12, 228, 188, 8, 233, 39, 190, 240, 248, 246, 187, 137, 126, 4, 120, 0, 54, 0, 58, 164, 196, 71, 188, 36, 160, 82, 62, 184, 216, 4, 60, 137, 126, 7, 119, 0, 57, 0, 58, 4, 146, 118, 60, 0, 219, 60, 59, 192, 22, 172, 187, 137, 126, 5, 120, 149, 54, 89, 57, 130, 2, 214, 60, 208, 14, 31, 61, 64, 207, 190, 59, 137, 126, 11, 117, 181, 56, 65, 57 ),
+"array_index_data": PoolByteArray( 3, 0, 1, 0, 2, 0, 2, 0, 1, 0, 0, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=48]
+points = PoolVector3Array( -0.0278382, -0.163975, -0.007537, 0.0150476, 0.00287321, -0.00525207, 0.0261242, 0.0388047, 0.00582185, -0.0121977, 0.205689, 0.00810831 )
+
+[sub_resource type="ArrayMesh" id=17]
+resource_name = "cyberbottle_broken_Cube019"
+surfaces/0 = {
+"aabb": AABB( -0.000688732, -0.056107, -0.0960781, 0.00183663, 0.149619, 0.171849 ),
+"array_data": PoolByteArray( 0, 140, 52, 186, 128, 208, 101, 189, 147, 196, 196, 189, 131, 1, 1, 126, 0, 54, 0, 58, 0, 117, 150, 58, 16, 131, 191, 61, 132, 242, 79, 189, 131, 1, 1, 125, 120, 54, 133, 58, 0, 140, 52, 186, 128, 208, 101, 189, 173, 45, 155, 61, 131, 1, 2, 126, 0, 54, 0, 60, 0, 117, 150, 58, 16, 131, 191, 61, 104, 137, 249, 60, 131, 1, 1, 126, 120, 54, 122, 59 ),
+"array_index_data": PoolByteArray( 3, 0, 0, 0, 1, 0, 3, 0, 2, 0, 0, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=49]
+points = PoolVector3Array( -0.000688732, -0.056107, -0.0960781, 0.0011479, 0.0934971, -0.0507777, -0.000688732, -0.056107, 0.0757707, 0.0011479, 0.0934971, 0.0304535 )
+
+[sub_resource type="ArrayMesh" id=18]
+resource_name = "cyberbottle_broken_Cube020"
+surfaces/0 = {
+"aabb": AABB( -0.0284095, -0.205689, -0.007537, 0.0539624, 0.369664, 0.0156553 ),
+"array_data": PoolByteArray( 14, 187, 232, 188, 36, 160, 82, 190, 184, 216, 4, 60, 0, 7, 12, 124, 0, 54, 0, 0, 236, 32, 81, 188, 8, 233, 39, 62, 240, 248, 246, 187, 0, 7, 14, 123, 0, 57, 0, 0, 188, 53, 109, 60, 192, 14, 31, 189, 64, 207, 190, 59, 0, 7, 13, 124, 149, 54, 49, 45, 94, 84, 209, 60, 0, 218, 60, 187, 192, 22, 172, 187, 0, 7, 18, 121, 181, 56, 242, 45 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 3, 0, 2, 0, 0, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=50]
+points = PoolVector3Array( -0.0284095, -0.205689, 0.00810831, 0.0144763, -0.0388409, 0.00582185, -0.0127691, 0.163975, -0.007537, 0.0255529, -0.00290942, -0.00525207 )
+
+[sub_resource type="ArrayMesh" id=19]
+resource_name = "cyberbottle_broken_Cube021"
+surfaces/0 = {
+"aabb": AABB( -0.014518, -0.0674328, -0.0708564, 0.0316757, 0.147126, 0.140568 ),
+"array_data": PoolByteArray( 16, 221, 109, 188, 48, 26, 138, 189, 206, 191, 142, 61, 152, 22, 127, 63, 0, 57, 0, 60, 16, 221, 109, 188, 48, 26, 138, 189, 38, 29, 145, 189, 152, 22, 127, 63, 0, 57, 0, 58, 68, 142, 140, 60, 64, 54, 163, 61, 53, 193, 27, 61, 152, 22, 127, 63, 0, 57, 0, 60, 68, 142, 140, 60, 64, 54, 163, 61, 231, 123, 32, 189, 152, 22, 127, 63, 0, 57, 0, 58 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=51]
+points = PoolVector3Array( -0.014518, -0.0674328, 0.069688, -0.014518, -0.0674328, -0.0708564, 0.0171577, 0.0796933, 0.0380157, 0.0171577, 0.0796933, -0.039184 )
+
+[sub_resource type="ArrayMesh" id=20]
+resource_name = "cyberbottle_broken_Cube022"
+surfaces/0 = {
+"aabb": AABB( -0.0708564, -0.0674328, -0.0171577, 0.140558, 0.147126, 0.0316857 ),
+"array_data": PoolByteArray( 38, 29, 145, 189, 48, 26, 138, 189, 16, 221, 109, 60, 0, 22, 127, 193, 0, 57, 0, 0, 206, 191, 142, 61, 48, 26, 138, 189, 16, 221, 109, 60, 0, 22, 127, 193, 0, 57, 0, 52, 231, 123, 32, 189, 64, 54, 163, 61, 68, 142, 140, 188, 0, 22, 127, 193, 0, 57, 0, 0, 53, 193, 27, 61, 64, 54, 163, 61, 68, 142, 140, 188, 0, 22, 127, 193, 0, 57, 0, 52 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=52]
+points = PoolVector3Array( -0.0708564, -0.0674328, 0.014518, 0.069688, -0.0674328, 0.014518, -0.039184, 0.0796933, -0.0171577, 0.0380157, 0.0796933, -0.0171577 )
+
+[sub_resource type="ArrayMesh" id=21]
+resource_name = "cyberbottle_broken_Cube023"
+surfaces/0 = {
+"aabb": AABB( -0.0697018, -0.0674328, -0.014518, 0.140558, 0.147126, 0.0316757 ),
+"array_data": PoolByteArray( 206, 191, 142, 189, 48, 26, 138, 189, 16, 221, 109, 188, 104, 127, 127, 63, 0, 57, 0, 58, 38, 29, 145, 61, 48, 26, 138, 189, 16, 221, 109, 188, 104, 127, 127, 63, 0, 57, 0, 56, 53, 193, 27, 189, 64, 54, 163, 61, 68, 142, 140, 60, 104, 127, 127, 63, 0, 57, 0, 58, 231, 123, 32, 61, 64, 54, 163, 61, 68, 142, 140, 60, 104, 127, 127, 63, 0, 57, 0, 56 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=53]
+points = PoolVector3Array( -0.0697018, -0.0674328, -0.014518, 0.0708426, -0.0674328, -0.014518, -0.0380294, 0.0796933, 0.0171577, 0.0391703, 0.0796933, 0.0171577 )
+
+[sub_resource type="ArrayMesh" id=22]
+resource_name = "cyberbottle_broken_Cube024"
+surfaces/0 = {
+"aabb": AABB( -0.00805224, -0.16613, -0.0293296, 0.0156553, 0.369664, 0.0572817 ),
+"array_data": PoolByteArray( 80, 207, 248, 59, 224, 29, 42, 190, 162, 68, 240, 188, 119, 7, 249, 120, 0, 54, 0, 56, 144, 160, 188, 59, 192, 65, 135, 188, 162, 232, 130, 60, 119, 7, 250, 117, 120, 54, 245, 54, 136, 237, 3, 188, 76, 107, 80, 62, 20, 52, 96, 188, 119, 7, 249, 120, 0, 57, 0, 56, 80, 172, 203, 187, 128, 214, 92, 61, 222, 251, 228, 60, 119, 7, 249, 120, 195, 56, 205, 54 ),
+"array_index_data": PoolByteArray( 3, 0, 0, 0, 1, 0, 3, 0, 2, 0, 0, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=54]
+points = PoolVector3Array( -0.00621603, 0.0539102, 0.0279521, -0.00805224, 0.203534, -0.0136859, 0.00759307, -0.16613, -0.0293296, 0.00575533, -0.0165416, 0.0159754 )
+
+[sub_resource type="ArrayMesh" id=23]
+resource_name = "cyberbottle_broken_Cube025"
+surfaces/0 = {
+"aabb": AABB( -0.0171577, -0.0674328, -0.0697018, 0.0316857, 0.147126, 0.140558 ),
+"array_data": PoolByteArray( 16, 221, 109, 60, 48, 26, 138, 189, 206, 191, 142, 189, 104, 22, 127, 63, 0, 57, 0, 56, 16, 221, 109, 60, 48, 26, 138, 189, 38, 29, 145, 61, 104, 22, 127, 63, 0, 57, 0, 52, 68, 142, 140, 188, 64, 54, 163, 61, 53, 193, 27, 189, 104, 22, 127, 63, 0, 57, 0, 56, 68, 142, 140, 188, 64, 54, 163, 61, 231, 123, 32, 61, 104, 22, 127, 63, 0, 57, 0, 52 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=55]
+points = PoolVector3Array( 0.014518, -0.0674328, 0.0708426, 0.014518, -0.0674328, -0.0697018, -0.0171577, 0.0796933, 0.0391703, -0.0171577, 0.0796933, -0.0380294 )
+
+[sub_resource type="ArrayMesh" id=24]
+resource_name = "cyberbottle_broken_Cube026"
+surfaces/0 = {
+"aabb": AABB( -0.0261242, -0.163975, -0.00810831, 0.0539724, 0.369664, 0.0156553 ),
+"array_data": PoolByteArray( 234, 12, 228, 60, 8, 233, 39, 190, 240, 248, 246, 59, 0, 7, 244, 124, 0, 54, 0, 52, 164, 196, 71, 60, 36, 160, 82, 62, 184, 216, 4, 188, 0, 7, 242, 123, 0, 57, 0, 52, 4, 146, 118, 188, 0, 219, 60, 59, 192, 22, 172, 59, 0, 7, 243, 124, 149, 54, 103, 49, 130, 2, 214, 188, 208, 14, 31, 61, 64, 207, 190, 187, 0, 7, 238, 121, 181, 56, 6, 49 ),
+"array_index_data": PoolByteArray( 3, 0, 1, 0, 2, 0, 2, 0, 1, 0, 0, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=56]
+points = PoolVector3Array( -0.0261242, 0.0388047, -0.00582338, 0.0121925, 0.205689, -0.00810831, 0.0278382, -0.163975, 0.007537, -0.0150529, 0.00287321, 0.00525054 )
+
+[sub_resource type="ArrayMesh" id=25]
+resource_name = "cyberbottle_broken_Cube027"
+surfaces/0 = {
+"aabb": AABB( 0, -0.0483077, -0.0386034, 1e-05, 0.0966155, 0.0772167 ),
+"array_data": PoolByteArray( 0, 0, 0, 0, 88, 222, 69, 189, 142, 30, 30, 61, 129, 0, 127, 63, 0, 57, 0, 60, 0, 0, 0, 0, 88, 222, 69, 61, 142, 30, 30, 61, 129, 0, 127, 63, 0, 57, 0, 60, 0, 0, 0, 0, 88, 222, 69, 189, 142, 30, 30, 189, 129, 0, 127, 63, 0, 57, 0, 58, 0, 0, 0, 0, 88, 222, 69, 61, 142, 30, 30, 189, 129, 0, 127, 63, 0, 57, 0, 58 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=57]
+points = PoolVector3Array( 0, 0.0483077, 0.0386034, 0, 0.0483077, -0.0386034, 0, -0.0483077, 0.0386034, 0, -0.0483077, -0.0386034 )
+
+[sub_resource type="ArrayMesh" id=26]
+resource_name = "cyberbottle_broken_Cube028"
+surfaces/0 = {
+"aabb": AABB( 0, -0.0483077, -0.0386034, 1e-05, 0.0966155, 0.0772067 ),
+"array_data": PoolByteArray( 0, 0, 0, 0, 88, 222, 69, 189, 142, 30, 30, 189, 127, 0, 127, 63, 0, 57, 0, 56, 0, 0, 0, 0, 88, 222, 69, 189, 142, 30, 30, 61, 127, 0, 127, 63, 0, 57, 0, 52, 0, 0, 0, 0, 88, 222, 69, 61, 142, 30, 30, 189, 127, 0, 127, 63, 0, 57, 0, 56, 0, 0, 0, 0, 88, 222, 69, 61, 142, 30, 30, 61, 127, 0, 127, 63, 0, 57, 0, 52 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=58]
+points = PoolVector3Array( 0, 0.0483077, 0.0386034, 0, 0.0483077, -0.0386034, 0, -0.0483077, 0.0386034, 0, -0.0483077, -0.0386034 )
+
+[sub_resource type="ArrayMesh" id=27]
+resource_name = "cyberbottle_broken_Cube029"
+surfaces/0 = {
+"aabb": AABB( -0.0386034, 0, -0.0386034, 0.0772067, 1e-05, 0.0772167 ),
+"array_data": PoolByteArray( 142, 30, 30, 189, 0, 0, 0, 0, 142, 30, 30, 61, 0, 127, 129, 63, 0, 59, 0, 52, 142, 30, 30, 189, 0, 0, 0, 0, 142, 30, 30, 189, 0, 127, 129, 63, 0, 59, 0, 56, 142, 30, 30, 61, 0, 0, 0, 0, 142, 30, 30, 61, 0, 127, 129, 63, 0, 57, 0, 52, 142, 30, 30, 61, 0, 0, 0, 0, 142, 30, 30, 189, 0, 127, 129, 63, 0, 57, 0, 56 ),
+"array_index_data": PoolByteArray( 3, 0, 0, 0, 1, 0, 3, 0, 2, 0, 0, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=59]
+points = PoolVector3Array( -0.0386034, 0, -0.0386034, -0.0386034, 0, 0.0386034, 0.0386034, 0, -0.0386034, 0.0386034, 0, 0.0386034 )
+
+[sub_resource type="ArrayMesh" id=28]
+resource_name = "cyberbottle_broken_Cube030"
+surfaces/0 = {
+"aabb": AABB( -0.0537959, -0.0224692, -0.00415304, 0.0860735, 0.0359508, 0.0110848 ),
+"array_data": PoolByteArray( 28, 89, 92, 189, 96, 17, 184, 188, 192, 207, 226, 59, 0, 29, 226, 126, 149, 54, 49, 45, 92, 252, 46, 189, 192, 225, 92, 60, 64, 22, 136, 187, 0, 29, 226, 126, 181, 56, 242, 45, 120, 53, 4, 61, 96, 17, 184, 188, 192, 207, 226, 59, 0, 29, 30, 126, 149, 54, 103, 49, 111, 177, 173, 60, 192, 225, 92, 60, 64, 22, 136, 187, 0, 29, 31, 126, 181, 56, 6, 49 ),
+"array_index_data": PoolByteArray( 2, 0, 1, 0, 3, 0, 2, 0, 0, 0, 1, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=60]
+points = PoolVector3Array( 0.0211982, 0.013478, -0.00415304, 0.0322776, -0.0224692, 0.00692174, -0.042725, 0.013478, -0.00415304, -0.0537959, -0.0224692, 0.00692174 )
+
+[sub_resource type="ArrayMesh" id=29]
+resource_name = "cyberbottle_broken_Cube031"
+surfaces/0 = {
+"aabb": AABB( -0.0322776, -0.0224692, -0.00692174, 0.0860735, 0.0359608, 0.0110848 ),
+"array_data": PoolByteArray( 111, 177, 173, 188, 192, 225, 92, 60, 64, 22, 136, 59, 97, 127, 255, 111, 181, 56, 65, 57, 120, 53, 4, 189, 96, 17, 184, 188, 192, 207, 226, 187, 97, 127, 0, 111, 149, 54, 89, 57, 92, 252, 46, 61, 192, 225, 92, 60, 64, 22, 136, 59, 97, 127, 0, 111, 181, 56, 190, 56, 28, 89, 92, 61, 96, 17, 184, 188, 192, 207, 226, 187, 97, 127, 1, 111, 149, 54, 166, 56 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=61]
+points = PoolVector3Array( 0.0427166, 0.013478, 0.00415304, 0.0537959, -0.0224692, -0.00692174, -0.0212066, 0.013478, 0.00415304, -0.0322776, -0.0224692, -0.00692174 )
+
+[sub_resource type="ArrayMesh" id=30]
+resource_name = "cyberbottle_broken_Cube032"
+surfaces/0 = {
+"aabb": AABB( -0.00571457, -0.0336163, -0.0405408, 0.0119721, 0.0704263, 0.0812294 ),
+"array_data": PoolByteArray( 64, 65, 187, 187, 64, 177, 9, 189, 41, 14, 38, 189, 148, 18, 17, 114, 120, 54, 133, 58, 64, 65, 187, 187, 64, 177, 9, 189, 15, 169, 38, 61, 148, 18, 18, 117, 120, 54, 122, 59, 160, 11, 205, 59, 32, 198, 22, 61, 21, 9, 234, 188, 148, 18, 18, 117, 195, 56, 153, 58, 160, 11, 205, 59, 32, 198, 22, 61, 227, 62, 235, 60, 148, 18, 26, 118, 195, 56, 102, 59 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=62]
+points = PoolVector3Array( -0.00571457, -0.0336163, -0.0405408, 0.00625749, 0.03681, -0.0285743, -0.00571457, -0.0336163, 0.0406886, 0.00625749, 0.03681, 0.0287141 )
+
+[sub_resource type="ArrayMesh" id=31]
+resource_name = "cyberbottle_broken_Cube033"
+surfaces/0 = {
+"aabb": AABB( -0.00625749, -0.0336163, -0.0406886, 0.0119721, 0.0704363, 0.0812294 ),
+"array_data": PoolByteArray( 160, 11, 205, 187, 32, 198, 22, 61, 227, 62, 235, 188, 108, 18, 239, 113, 195, 56, 205, 54, 64, 65, 187, 59, 64, 177, 9, 189, 15, 169, 38, 189, 108, 18, 238, 117, 120, 54, 245, 54, 160, 11, 205, 187, 32, 198, 22, 61, 21, 9, 234, 60, 108, 18, 238, 117, 195, 56, 50, 53, 64, 65, 187, 59, 64, 177, 9, 189, 41, 14, 38, 61, 108, 18, 232, 118, 120, 54, 10, 53 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConvexPolygonShape" id=63]
+points = PoolVector3Array( 0.00571457, -0.0336163, -0.0406886, -0.00625749, 0.03681, -0.028722, 0.00571457, -0.0336163, 0.0405408, -0.00625749, 0.03681, 0.0285663 )
+
+[sub_resource type="ArrayMesh" id=32]
+resource_name = "cyberbottle_broken_Cube034"
+surfaces/0 = {
+"aabb": AABB( -1, -1, -1, 2, 2, 2.00001 ),
+"array_data": PoolByteArray( 254, 255, 127, 191, 254, 255, 127, 191, 254, 255, 127, 63, 129, 0, 0, 127, 0, 54, 0, 60, 254, 255, 127, 191, 254, 255, 127, 191, 254, 255, 127, 63, 0, 129, 127, 63, 0, 48, 0, 52, 254, 255, 127, 191, 254, 255, 127, 191, 254, 255, 127, 63, 0, 0, 0, 127, 0, 54, 0, 0, 254, 255, 127, 191, 254, 255, 127, 191, 254, 255, 127, 191, 129, 0, 0, 127, 0, 54, 0, 58, 254, 255, 127, 191, 254, 255, 127, 191, 254, 255, 127, 191, 0, 129, 127, 63, 0, 48, 0, 56, 254, 255, 127, 191, 254, 255, 127, 191, 254, 255, 127, 191, 127, 127, 0, 127, 0, 54, 0, 58, 254, 255, 127, 191, 254, 255, 127, 63, 254, 255, 127, 63, 129, 0, 0, 127, 0, 57, 0, 60, 254, 255, 127, 191, 254, 255, 127, 63, 254, 255, 127, 63, 0, 0, 0, 127, 0, 57, 0, 0, 254, 255, 127, 191, 254, 255, 127, 63, 254, 255, 127, 63, 0, 127, 129, 63, 0, 59, 0, 52, 254, 255, 127, 63, 254, 255, 127, 191, 254, 255, 127, 63, 0, 129, 127, 63, 0, 54, 0, 52, 254, 255, 127, 63, 254, 255, 127, 191, 254, 255, 127, 63, 0, 0, 0, 127, 0, 54, 0, 52, 254, 255, 127, 63, 254, 255, 127, 191, 254, 255, 127, 63, 127, 0, 0, 127, 0, 54, 0, 52, 254, 255, 127, 63, 254, 255, 127, 191, 254, 255, 127, 191, 0, 129, 127, 63, 0, 54, 0, 56, 254, 255, 127, 63, 254, 255, 127, 191, 254, 255, 127, 191, 127, 127, 0, 127, 0, 54, 0, 56, 254, 255, 127, 63, 254, 255, 127, 191, 254, 255, 127, 191, 127, 0, 0, 127, 0, 54, 0, 56, 254, 255, 127, 63, 254, 255, 127, 63, 254, 255, 127, 63, 0, 0, 0, 127, 0, 57, 0, 52, 254, 255, 127, 63, 254, 255, 127, 63, 254, 255, 127, 63, 0, 127, 129, 63, 0, 57, 0, 52, 254, 255, 127, 63, 254, 255, 127, 63, 254, 255, 127, 63, 127, 0, 0, 127, 0, 57, 0, 52, 254, 255, 127, 63, 254, 255, 127, 63, 254, 255, 127, 191, 127, 127, 0, 127, 0, 57, 0, 56, 254, 255, 127, 63, 254, 255, 127, 63, 254, 255, 127, 191, 0, 127, 129, 63, 0, 57, 0, 56, 254, 255, 127, 63, 254, 255, 127, 63, 254, 255, 127, 191, 127, 0, 0, 127, 0, 57, 0, 56, 254, 255, 127, 191, 254, 255, 127, 63, 254, 255, 127, 191, 129, 0, 0, 127, 0, 57, 0, 58, 254, 255, 127, 191, 254, 255, 127, 63, 254, 255, 127, 191, 127, 127, 0, 127, 0, 57, 0, 58, 254, 255, 127, 191, 254, 255, 127, 63, 254, 255, 127, 191, 0, 127, 129, 63, 0, 59, 0, 56 ),
+"array_index_data": PoolByteArray( 4, 0, 9, 0, 12, 0, 4, 0, 1, 0, 9, 0, 0, 0, 21, 0, 6, 0, 0, 0, 3, 0, 21, 0, 10, 0, 7, 0, 15, 0, 10, 0, 2, 0, 7, 0, 14, 0, 17, 0, 20, 0, 14, 0, 11, 0, 17, 0, 19, 0, 8, 0, 23, 0, 19, 0, 16, 0, 8, 0, 5, 0, 18, 0, 22, 0, 5, 0, 13, 0, 18, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 36,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ConvexPolygonShape" id=64]
+points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
+
+[node name="CyberBottle_broken" type="Spatial"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -1.5, 0 )
+script = ExtResource( 4 )
+
+[node name="smash" parent="." instance=ExtResource( 5 )]
+
+[node name="Free" parent="." instance=ExtResource( 3 )]
+
+[node name="RigidBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.96128e-05, 0.0765821, 0.0848755 )
+
+[node name="Cube" type="MeshInstance" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
+shape = SubResource( 33 )
+
+[node name="RigidBody3" type="RigidBody" parent="."]
+transform = Transform( -0.0206494, 0, 0, 0, 0.00656978, 0, 0, 0, -0.00384699, -0.031271, 0.052046, 0.085652 )
+
+[node name="Cube001" type="MeshInstance" parent="RigidBody3"]
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody3"]
+shape = SubResource( 34 )
+
+[node name="RigidBody4" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85514e-05, 0.294132, 0.0713136 )
+
+[node name="Cube002" type="MeshInstance" parent="RigidBody4"]
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody4"]
+shape = SubResource( 35 )
+
+[node name="RigidBody5" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96128e-05, 0.0765821, -0.0848755 )
+
+[node name="Cube003" type="MeshInstance" parent="RigidBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
+mesh = SubResource( 4 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
+shape = SubResource( 36 )
+
+[node name="RigidBody6" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85514e-05, 0.294132, -0.0713136 )
+
+[node name="Cube004" type="MeshInstance" parent="RigidBody6"]
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody6"]
+shape = SubResource( 37 )
+
+[node name="RigidBody7" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575149, 0.205689, -0.0778161 )
+
+[node name="Cube005" type="MeshInstance" parent="RigidBody7"]
+mesh = SubResource( 6 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody7"]
+shape = SubResource( 38 )
+
+[node name="RigidBody8" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565098, 0.0386034 )
+
+[node name="Cube006" type="MeshInstance" parent="RigidBody8"]
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody8"]
+shape = SubResource( 39 )
+
+[node name="RigidBody9" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565098, -0.0386034 )
+
+[node name="Cube007" type="MeshInstance" parent="RigidBody9"]
+mesh = SubResource( 8 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody9"]
+shape = SubResource( 40 )
+
+[node name="RigidBody10" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783313, 0.16613, 0.0565948 )
+
+[node name="Cube008" type="MeshInstance" parent="RigidBody10"]
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody10"]
+shape = SubResource( 41 )
+
+[node name="RigidBody11" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0711107, 0.30192, 0.000533245 )
+
+[node name="Cube009" type="MeshInstance" parent="RigidBody11"]
+mesh = SubResource( 10 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody11"]
+shape = SubResource( 42 )
+
+[node name="RigidBody12" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0778722, 0.203534, -0.0561356 )
+
+[node name="Cube010" type="MeshInstance" parent="RigidBody12"]
+mesh = SubResource( 11 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody12"]
+shape = SubResource( 43 )
+
+[node name="RigidBody13" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0850061, 0.0748094, 0 )
+
+[node name="Cube011" type="MeshInstance" parent="RigidBody13"]
+mesh = SubResource( 12 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody13"]
+shape = SubResource( 44 )
+
+[node name="RigidBody14" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0711107, 0.30192, -0.000533255 )
+
+[node name="Cube012" type="MeshInstance" parent="RigidBody14"]
+mesh = SubResource( 13 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody14"]
+shape = SubResource( 45 )
+
+[node name="RigidBody15" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0778722, 0.203534, 0.0561356 )
+
+[node name="Cube013" type="MeshInstance" parent="RigidBody15"]
+mesh = SubResource( 14 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody15"]
+shape = SubResource( 46 )
+
+[node name="RigidBody16" type="RigidBody" parent="."]
+
+[node name="Cube014" type="MeshInstance" parent="RigidBody16"]
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody16"]
+shape = SubResource( 47 )
+
+[node name="RigidBody17" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0580862, 0.163975, -0.0783874 )
+
+[node name="Cube015" type="MeshInstance" parent="RigidBody17"]
+mesh = SubResource( 16 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody17"]
+shape = SubResource( 48 )
+
+[node name="RigidBody18" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0852357, 0.0561071, 0.0101537 )
+
+[node name="Cube016" type="MeshInstance" parent="RigidBody18"]
+mesh = SubResource( 17 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody18"]
+shape = SubResource( 49 )
+
+[node name="RigidBody19" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0575149, 0.205689, 0.0778161 )
+
+[node name="Cube017" type="MeshInstance" parent="RigidBody19"]
+mesh = SubResource( 18 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody19"]
+shape = SubResource( 50 )
+
+[node name="RigidBody20" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055761, 0.437097, 0.000577303 )
+
+[node name="Cube018" type="MeshInstance" parent="RigidBody20"]
+mesh = SubResource( 19 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody20"]
+shape = SubResource( 51 )
+
+[node name="RigidBody21" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000577303, 0.437097, 0.055761 )
+
+[node name="Cube019" type="MeshInstance" parent="RigidBody21"]
+mesh = SubResource( 20 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody21"]
+shape = SubResource( 52 )
+
+[node name="RigidBody22" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000577303, 0.437097, -0.055761 )
+
+[node name="Cube020" type="MeshInstance" parent="RigidBody22"]
+mesh = SubResource( 21 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody22"]
+shape = SubResource( 53 )
+
+[node name="RigidBody23" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783313, 0.16613, -0.0565948 )
+
+[node name="Cube021" type="MeshInstance" parent="RigidBody23"]
+mesh = SubResource( 22 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody23"]
+shape = SubResource( 54 )
+
+[node name="RigidBody24" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055761, 0.437097, -0.000577303 )
+
+[node name="Cube022" type="MeshInstance" parent="RigidBody24"]
+mesh = SubResource( 23 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody24"]
+shape = SubResource( 55 )
+
+[node name="RigidBody25" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0580862, 0.163975, 0.0783874 )
+
+[node name="Cube023" type="MeshInstance" parent="RigidBody25"]
+mesh = SubResource( 24 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody25"]
+shape = SubResource( 56 )
+
+[node name="RigidBody26" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386034, 0.565098, 0 )
+
+[node name="Cube024" type="MeshInstance" parent="RigidBody26"]
+mesh = SubResource( 25 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody26"]
+shape = SubResource( 57 )
+
+[node name="RigidBody27" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0386034, 0.565098, 0 )
+
+[node name="Cube025" type="MeshInstance" parent="RigidBody27"]
+mesh = SubResource( 26 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody27"]
+shape = SubResource( 58 )
+
+[node name="RigidBody28" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.613405, 0 )
+
+[node name="Cube026" type="MeshInstance" parent="RigidBody28"]
+mesh = SubResource( 27 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody28"]
+shape = SubResource( 59 )
+
+[node name="RigidBody29" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107592, 0.189326, 0.0767174 )
+
+[node name="Cube027" type="MeshInstance" parent="RigidBody29"]
+mesh = SubResource( 28 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody29"]
+shape = SubResource( 60 )
+
+[node name="RigidBody30" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107592, 0.189326, -0.0767174 )
+
+[node name="Cube028" type="MeshInstance" parent="RigidBody30"]
+mesh = SubResource( 29 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody30"]
+shape = SubResource( 61 )
+
+[node name="RigidBody31" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783732, 0.183235, -7.38701e-05 )
+
+[node name="Cube029" type="MeshInstance" parent="RigidBody31"]
+mesh = SubResource( 30 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody31"]
+shape = SubResource( 62 )
+
+[node name="RigidBody32" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783732, 0.183235, 7.38552e-05 )
+
+[node name="Cube030" type="MeshInstance" parent="RigidBody32"]
+mesh = SubResource( 31 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody32"]
+shape = SubResource( 63 )
+
+[node name="RigidBody33" type="RigidBody" parent="."]
+transform = Transform( -0.0206494, 0, 0, 0, 0.00656978, 0, 0, 0, -0.00384699, 0.031271, 0.052046, 0.0856521 )
+
+[node name="Cube031" type="MeshInstance" parent="RigidBody33"]
+mesh = SubResource( 32 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody33"]
+shape = SubResource( 64 )
