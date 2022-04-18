@@ -50,4 +50,5 @@ func refresh_queue():
 	if Multiplayer.connected:
 		for i in Multiplayer.new_player_queue:
 			other_players.add_child(i)
+			Multiplayer.player_added(i.id)
 			Multiplayer.new_player_queue.erase(i)

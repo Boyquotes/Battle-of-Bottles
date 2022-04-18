@@ -285,6 +285,10 @@ func map_loaded():
 		rpc("other_map_loaded")
 
 
+func player_added(id):
+	rpc_id(id, "other_player_added")
+
+
 func send_bottle_pos(target_id, bottle_id, position, rot):
 	if connected:
 		rpc_id(target_id, "set_bottle_position", bottle_id, position, rot)
@@ -292,9 +296,13 @@ func send_bottle_pos(target_id, bottle_id, position, rot):
 
 remote func other_map_loaded():
 	var id = get_tree().get_rpc_sender_id()
-	if is_instance_valid(current_player):
-		change_weapon(current_player.current_weapon)
 	emit_signal("other_loaded", id)
+
+
+remote func other_player_added():
+	var id = get_tree().get_rpc_sender_id()
+	if is_instance_valid(current_player):
+		rpc_id(id, "other_change_weapon", current_player.current_weapon)
 
 
 remote func other_change_weapon(weapon):
