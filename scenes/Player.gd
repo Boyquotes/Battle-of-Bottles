@@ -182,16 +182,18 @@ func process_input(delta):
 			input_movement_vector.y = Input.get_action_strength("movement_forward") - Input.get_action_strength("movement_backward")
 			is_walking = true
 		if Input.is_action_pressed("movement_right") or Input.is_action_pressed("movement_left"):
-			input_movement_vector.x = Input.get_action_strength("movement_right") - Input.get_action_strength("movement_left")
+			input_movement_vector.x =  Input.get_action_strength("movement_left") - Input.get_action_strength("movement_right")
 			is_walking = true
 	
 	input_movement_vector = input_movement_vector.normalized()
 	
 	# Multiply normalized values with Input strength for controller support
 	if Input.is_action_pressed("movement_forward") or Input.is_action_pressed("movement_backward"):
-		dir += -cam_xform.basis.z * input_movement_vector.y * (Input.get_action_strength("movement_forward") + Input.get_action_strength("movement_backward"))
+		dir.z = input_movement_vector.y * Input.get_action_strength("movement_forward") - Input.get_action_strength("movement_backward")
 	if Input.is_action_pressed("movement_right") or Input.is_action_pressed("movement_left"):
-		dir += cam_xform.basis.x * input_movement_vector.x * (Input.get_action_strength("movement_right") + Input.get_action_strength("movement_left"))
+		dir.x = input_movement_vector.x * Input.get_action_strength("movement_left") - Input.get_action_strength("movement_right")
+	
+	dir = dir.rotated(Vector3(0,1,0), rotation.y)
 	
 	# Jumping
 	if is_on_floor() and not IngameUI.paused:
