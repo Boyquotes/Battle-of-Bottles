@@ -43,6 +43,7 @@ var kills = 0
 var deaths = 0
 
 onready var other_player_script = preload("res://scenes/OtherPlayer.gd").new()
+var current_player: KinematicBody
 
 
 func _ready():
@@ -152,6 +153,10 @@ func _connected_fail():
 	print("connection failed")
 	stop_multiplayer()
 	get_tree().change_scene("res://scenes/ConnectionFailed.tscn")
+
+
+func register_local_player(player: KinematicBody):
+	current_player = player 
 
 
 remote func register_player(info, stats):
@@ -287,6 +292,8 @@ func send_bottle_pos(target_id, bottle_id, position, rot):
 
 remote func other_map_loaded():
 	var id = get_tree().get_rpc_sender_id()
+	if is_instance_valid(current_player):
+		change_weapon(current_player.current_weapon)
 	emit_signal("other_loaded", id)
 
 

@@ -583,15 +583,16 @@ surfaces/0 = {
 points = PoolVector3Array( 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1 )
 
 [node name="CyberBottle_broken" type="Spatial"]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -1.5, 0 )
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 script = ExtResource( 4 )
 
 [node name="smash" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
 [node name="Free" parent="." instance=ExtResource( 3 )]
 
 [node name="RigidBody" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.96128e-05, 0.0765821, 0.0848755 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.96128e-05, -0.223418, 0.0848755 )
 
 [node name="Cube" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
@@ -604,7 +605,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
 shape = SubResource( 33 )
 
 [node name="RigidBody3" type="RigidBody" parent="."]
-transform = Transform( -0.0206494, 0, 0, 0, 0.00656978, 0, 0, 0, -0.00384699, -0.031271, 0.052046, 0.085652 )
+transform = Transform( -0.0206494, 0, 0, 0, 0.00656978, 0, 0, 0, -0.00384699, -0.031271, -0.247954, 0.085652 )
 
 [node name="Cube001" type="MeshInstance" parent="RigidBody3"]
 mesh = SubResource( 2 )
@@ -615,7 +616,7 @@ material/0 = null
 shape = SubResource( 34 )
 
 [node name="RigidBody4" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85514e-05, 0.294132, 0.0713136 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85514e-05, -0.00586801, 0.0713136 )
 
 [node name="Cube002" type="MeshInstance" parent="RigidBody4"]
 mesh = SubResource( 3 )
@@ -626,7 +627,7 @@ material/0 = null
 shape = SubResource( 35 )
 
 [node name="RigidBody5" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96128e-05, 0.0765821, -0.0848755 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96128e-05, -0.223418, -0.0848755 )
 
 [node name="Cube003" type="MeshInstance" parent="RigidBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
@@ -639,7 +640,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0 )
 shape = SubResource( 36 )
 
 [node name="RigidBody6" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85514e-05, 0.294132, -0.0713136 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85514e-05, -0.00586801, -0.0713136 )
 
 [node name="Cube004" type="MeshInstance" parent="RigidBody6"]
 mesh = SubResource( 5 )
@@ -650,7 +651,7 @@ material/0 = null
 shape = SubResource( 37 )
 
 [node name="RigidBody7" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575149, 0.205689, -0.0778161 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575149, -0.094311, -0.0778161 )
 
 [node name="Cube005" type="MeshInstance" parent="RigidBody7"]
 mesh = SubResource( 6 )
@@ -661,7 +662,7 @@ material/0 = null
 shape = SubResource( 38 )
 
 [node name="RigidBody8" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565098, 0.0386034 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265098, 0.0386034 )
 
 [node name="Cube006" type="MeshInstance" parent="RigidBody8"]
 mesh = SubResource( 7 )
@@ -672,7 +673,7 @@ material/0 = null
 shape = SubResource( 39 )
 
 [node name="RigidBody9" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565098, -0.0386034 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265098, -0.0386034 )
 
 [node name="Cube007" type="MeshInstance" parent="RigidBody9"]
 mesh = SubResource( 8 )
@@ -683,7 +684,7 @@ material/0 = null
 shape = SubResource( 40 )
 
 [node name="RigidBody10" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783313, 0.16613, 0.0565948 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783313, -0.13387, 0.0565948 )
 
 [node name="Cube008" type="MeshInstance" parent="RigidBody10"]
 mesh = SubResource( 9 )
@@ -694,7 +695,7 @@ material/0 = null
 shape = SubResource( 41 )
 
 [node name="RigidBody11" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0711107, 0.30192, 0.000533245 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0711107, 0.00191998, 0.000533245 )
 
 [node name="Cube009" type="MeshInstance" parent="RigidBody11"]
 mesh = SubResource( 10 )
@@ -705,7 +706,7 @@ material/0 = null
 shape = SubResource( 42 )
 
 [node name="RigidBody12" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0778722, 0.203534, -0.0561356 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0778722, -0.096466, -0.0561356 )
 
 [node name="Cube010" type="MeshInstance" parent="RigidBody12"]
 mesh = SubResource( 11 )
@@ -716,7 +717,7 @@ material/0 = null
 shape = SubResource( 43 )
 
 [node name="RigidBody13" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0850061, 0.0748094, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0850061, -0.225191, 0 )
 
 [node name="Cube011" type="MeshInstance" parent="RigidBody13"]
 mesh = SubResource( 12 )
@@ -727,7 +728,7 @@ material/0 = null
 shape = SubResource( 44 )
 
 [node name="RigidBody14" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0711107, 0.30192, -0.000533255 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0711107, 0.00191998, -0.000533255 )
 
 [node name="Cube012" type="MeshInstance" parent="RigidBody14"]
 mesh = SubResource( 13 )
@@ -738,7 +739,7 @@ material/0 = null
 shape = SubResource( 45 )
 
 [node name="RigidBody15" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0778722, 0.203534, 0.0561356 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0778722, -0.096466, 0.0561356 )
 
 [node name="Cube013" type="MeshInstance" parent="RigidBody15"]
 mesh = SubResource( 14 )
@@ -749,6 +750,7 @@ material/0 = null
 shape = SubResource( 46 )
 
 [node name="RigidBody16" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0 )
 
 [node name="Cube014" type="MeshInstance" parent="RigidBody16"]
 mesh = SubResource( 15 )
@@ -759,7 +761,7 @@ material/0 = null
 shape = SubResource( 47 )
 
 [node name="RigidBody17" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0580862, 0.163975, -0.0783874 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0580862, -0.136025, -0.0783874 )
 
 [node name="Cube015" type="MeshInstance" parent="RigidBody17"]
 mesh = SubResource( 16 )
@@ -770,7 +772,7 @@ material/0 = null
 shape = SubResource( 48 )
 
 [node name="RigidBody18" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0852357, 0.0561071, 0.0101537 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0852357, -0.243893, 0.0101537 )
 
 [node name="Cube016" type="MeshInstance" parent="RigidBody18"]
 mesh = SubResource( 17 )
@@ -781,7 +783,7 @@ material/0 = null
 shape = SubResource( 49 )
 
 [node name="RigidBody19" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0575149, 0.205689, 0.0778161 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0575149, -0.094311, 0.0778161 )
 
 [node name="Cube017" type="MeshInstance" parent="RigidBody19"]
 mesh = SubResource( 18 )
@@ -792,7 +794,7 @@ material/0 = null
 shape = SubResource( 50 )
 
 [node name="RigidBody20" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055761, 0.437097, 0.000577303 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055761, 0.137097, 0.000577303 )
 
 [node name="Cube018" type="MeshInstance" parent="RigidBody20"]
 mesh = SubResource( 19 )
@@ -803,7 +805,7 @@ material/0 = null
 shape = SubResource( 51 )
 
 [node name="RigidBody21" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000577303, 0.437097, 0.055761 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000577303, 0.137097, 0.055761 )
 
 [node name="Cube019" type="MeshInstance" parent="RigidBody21"]
 mesh = SubResource( 20 )
@@ -814,7 +816,7 @@ material/0 = null
 shape = SubResource( 52 )
 
 [node name="RigidBody22" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000577303, 0.437097, -0.055761 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000577303, 0.137097, -0.055761 )
 
 [node name="Cube020" type="MeshInstance" parent="RigidBody22"]
 mesh = SubResource( 21 )
@@ -825,7 +827,7 @@ material/0 = null
 shape = SubResource( 53 )
 
 [node name="RigidBody23" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783313, 0.16613, -0.0565948 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783313, -0.13387, -0.0565948 )
 
 [node name="Cube021" type="MeshInstance" parent="RigidBody23"]
 mesh = SubResource( 22 )
@@ -836,7 +838,7 @@ material/0 = null
 shape = SubResource( 54 )
 
 [node name="RigidBody24" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055761, 0.437097, -0.000577303 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055761, 0.137097, -0.000577303 )
 
 [node name="Cube022" type="MeshInstance" parent="RigidBody24"]
 mesh = SubResource( 23 )
@@ -847,7 +849,7 @@ material/0 = null
 shape = SubResource( 55 )
 
 [node name="RigidBody25" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0580862, 0.163975, 0.0783874 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0580862, -0.136025, 0.0783874 )
 
 [node name="Cube023" type="MeshInstance" parent="RigidBody25"]
 mesh = SubResource( 24 )
@@ -858,7 +860,7 @@ material/0 = null
 shape = SubResource( 56 )
 
 [node name="RigidBody26" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386034, 0.565098, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386034, 0.265098, 0 )
 
 [node name="Cube024" type="MeshInstance" parent="RigidBody26"]
 mesh = SubResource( 25 )
@@ -869,7 +871,7 @@ material/0 = null
 shape = SubResource( 57 )
 
 [node name="RigidBody27" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0386034, 0.565098, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0386034, 0.265098, 0 )
 
 [node name="Cube025" type="MeshInstance" parent="RigidBody27"]
 mesh = SubResource( 26 )
@@ -880,7 +882,7 @@ material/0 = null
 shape = SubResource( 58 )
 
 [node name="RigidBody28" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.613405, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313405, 0 )
 
 [node name="Cube026" type="MeshInstance" parent="RigidBody28"]
 mesh = SubResource( 27 )
@@ -891,7 +893,7 @@ material/0 = null
 shape = SubResource( 59 )
 
 [node name="RigidBody29" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107592, 0.189326, 0.0767174 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107592, -0.110674, 0.0767174 )
 
 [node name="Cube027" type="MeshInstance" parent="RigidBody29"]
 mesh = SubResource( 28 )
@@ -902,7 +904,7 @@ material/0 = null
 shape = SubResource( 60 )
 
 [node name="RigidBody30" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107592, 0.189326, -0.0767174 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107592, -0.110674, -0.0767174 )
 
 [node name="Cube028" type="MeshInstance" parent="RigidBody30"]
 mesh = SubResource( 29 )
@@ -913,7 +915,7 @@ material/0 = null
 shape = SubResource( 61 )
 
 [node name="RigidBody31" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783732, 0.183235, -7.38701e-05 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783732, -0.116765, -7.38701e-05 )
 
 [node name="Cube029" type="MeshInstance" parent="RigidBody31"]
 mesh = SubResource( 30 )
@@ -924,7 +926,7 @@ material/0 = null
 shape = SubResource( 62 )
 
 [node name="RigidBody32" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783732, 0.183235, 7.38552e-05 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783732, -0.116765, 7.38552e-05 )
 
 [node name="Cube030" type="MeshInstance" parent="RigidBody32"]
 mesh = SubResource( 31 )
@@ -935,7 +937,7 @@ material/0 = null
 shape = SubResource( 63 )
 
 [node name="RigidBody33" type="RigidBody" parent="."]
-transform = Transform( -0.0206494, 0, 0, 0, 0.00656978, 0, 0, 0, -0.00384699, 0.031271, 0.052046, 0.0856521 )
+transform = Transform( -0.0206494, 0, 0, 0, 0.00656978, 0, 0, 0, -0.00384699, 0.031271, -0.247954, 0.0856521 )
 
 [node name="Cube031" type="MeshInstance" parent="RigidBody33"]
 mesh = SubResource( 32 )

@@ -12,16 +12,14 @@ var player
 func _ready():
 	other_players = get_node(other_players_path)
 	player = get_node(player_path)
+	refresh_queue()
 	Multiplayer.connect("player_died", self, "_player_died")
 	Multiplayer.connect("cam_to_map", self, "_cam_to_map")
 	Multiplayer.map_loaded()
 
 
 func _process(delta):
-	if Multiplayer.connected:
-		for i in Multiplayer.new_player_queue:
-			other_players.add_child(i)
-			Multiplayer.new_player_queue.erase(i)
+	refresh_queue()
 	if not Multiplayer.dead:
 		Multiplayer.send_position(player.transform.origin, player.rotation)
 	else:
@@ -46,3 +44,10 @@ func _cam_to_map():
 	camera.far = 1000
 	camera.make_current()
 	Multiplayer.spectator_camera = camera
+
+
+func refresh_queue():
+	if Multiplayer.connected:
+		for i in Multiplayer.new_player_queue:
+			other_players.add_child(i)
+			Multiplayer.new_player_queue.erase(i)

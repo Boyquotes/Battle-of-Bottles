@@ -99,6 +99,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	Multiplayer.connect("hit", self, "_on_Multiplayer_hit")
+	Multiplayer.register_local_player(self)
 	
 	health = MAX_HEALTH
 	spawn()
@@ -254,7 +255,7 @@ func process_changing_weapons(delta):
 		guns[new_weapon][0].show()
 		current_weapon = new_weapon
 		
-		Multiplayer.change_weapon(current_weapon)	
+		Multiplayer.change_weapon(current_weapon)
 		
 		default_ammo = guns[current_weapon][1]
 		ammo = guns[current_weapon][2]
