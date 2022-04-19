@@ -16,10 +16,10 @@ const customizations = {
 		"sunglasses": ["Sunglasses", preload("res://assets/customizations/Sunglasses.tscn")]
 	},
 	"bottles": {
-		"default_bottle": ["Default - What have I done to you?", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
-		"ketchup_bottle": ["\"Ketchup\" - It's ketchup, nothing else", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
-		"superbottle": ["Superbottle - Oh lord, what a beast", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
-		"cyberbottle": ["CYBERBOTTLE - (almost) unbreakable", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
+		"default_bottle": ["Default", "What have I done to you?", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
+		"ketchup_bottle": ["\"Ketchup\"", "It's ketchup, nothing else", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
+		"superbottle": ["Superbottle", "Is it a bird? Is it a plane? No, it's Superbottle!", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
+		"cyberbottle": ["CYBERBOTTLE", "(almost) unbreakable", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
 	}
 }
 
@@ -39,8 +39,12 @@ func customize(player_customizations: Dictionary):
 	for i in player_customizations.keys():
 		if customizations.has(i):
 			if customizations[i].has(player_customizations[i]):
-				if customizations[i][player_customizations[i]][1] != null:
-					$Customizations.add_child(customizations[i][player_customizations[i]][1].instance())
+				if i == "bottles":
+					if customizations[i][player_customizations[i]][2] != null:
+						$Customizations.add_child(customizations[i][player_customizations[i]][2].instance())
+				else:
+					if customizations[i][player_customizations[i]][1] != null:
+						$Customizations.add_child(customizations[i][player_customizations[i]][1].instance())
 
 
 func customization_reset():
