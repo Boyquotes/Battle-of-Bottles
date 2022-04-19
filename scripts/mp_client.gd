@@ -13,7 +13,7 @@ signal player_died
 signal cam_to_map
 
 const DEFAULT_SERVER_PORT = 25575
-const PROTOCOL_VERSION = "1.1"
+const PROTOCOL_VERSION = "1.1-dev"
 
 var other_player_scene
 var connected = false
@@ -191,10 +191,11 @@ remote func update_position(position: Vector3, rot: Vector3):
 			player.rotation = rot
 
 
-remote func hit(damage, bullet_global_trans):
+remote func hit(id, damage, bullet_global_trans):
 	if is_map_loaded:
-		print("hit: " + str(damage) + ", " + str(bullet_global_trans))
-		emit_signal("hit", damage, bullet_global_trans, get_tree().get_rpc_sender_id())
+		if id == get_tree().get_network_unique_id():
+			print("hit: " + str(damage) + ", " + str(bullet_global_trans))
+			emit_signal("hit", damage, bullet_global_trans, get_tree().get_rpc_sender_id())
 
 
 remote func other_shoot(hit_pos: Vector3):
@@ -333,7 +334,7 @@ func bottle_hit(name, damage, bullet_global_trans):
 
 func hit_other_player(id, damage, bullet_global_trans):
 	if connected:
-		rpc_id(id, "hit", damage, bullet_global_trans)
+		rpc("hit", id, damage, bullet_global_trans)
 
 
 remote func set_map(map):
