@@ -220,7 +220,7 @@ func shoot(hit_pos: Vector3):
 
 func reload():
 	if connected:
-		rpc("reload")
+		rpc("other_reload")
 
 
 func die(pos: Vector3, rot: Vector3, bullet_global_transform: Transform, id):
