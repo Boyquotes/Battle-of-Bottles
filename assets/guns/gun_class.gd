@@ -98,8 +98,6 @@ func shoot():
 		else:
 			if not player.reloading:
 				# Reload
-				player.reloading = true
-				player.reload_cooldown.start()
-				reload.play()
+				player.reload()
 	else:
 		player.is_shooting = false
