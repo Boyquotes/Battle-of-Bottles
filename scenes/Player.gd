@@ -6,7 +6,7 @@ signal died
 signal hit
 
 const GRAVITY = -24.8
-const MAX_SPEED = 15
+const MAX_SPEED = 20
 const JUMP_POWER = 10
 const ACCEL = 2.5
 const DEACCEL= 16
@@ -366,6 +366,7 @@ func _input(event):
 	if Input.is_action_just_pressed("reload") and not is_spectating and not IngameUI.paused:
 		reloading = true
 		reload_cooldown.start()
+		Multiplayer.reload()
 		guns[current_weapon][0].get_node("reload").play()
 	
 	# Change weapon with mouse wheel

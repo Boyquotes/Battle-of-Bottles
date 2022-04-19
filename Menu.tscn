@@ -2961,7 +2961,6 @@ __meta__ = {
 }
 
 [node name="menu_main" type="MarginContainer" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 30.0
@@ -3272,6 +3271,7 @@ custom_styles/normal = ExtResource( 16 )
 text = "Cancel"
 
 [node name="menu_customization" type="MarginContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 40.0

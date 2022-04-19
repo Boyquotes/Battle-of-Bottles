@@ -204,6 +204,10 @@ remote func other_shoot(hit_pos: Vector3):
 		player_info[id]["instance"].shoot(hit_pos)
 
 
+remote func other_reload():
+	pass
+
+
 remote func other_bottle_hit(id, damage, bullet_global_trans):
 	if is_map_loaded:
 		emit_signal("bottle_hit", id, damage, bullet_global_trans)
@@ -212,6 +216,11 @@ remote func other_bottle_hit(id, damage, bullet_global_trans):
 func shoot(hit_pos: Vector3):
 	if connected:
 		rpc("other_shoot", hit_pos)
+
+
+func reload():
+	if connected:
+		rpc("reload")
 
 
 func die(pos: Vector3, rot: Vector3, bullet_global_transform: Transform, id):
