@@ -364,10 +364,7 @@ func _input(event):
 	
 	# Reloading
 	if Input.is_action_just_pressed("reload") and not is_spectating and not IngameUI.paused:
-		reloading = true
-		reload_cooldown.start()
-		Multiplayer.reload()
-		guns[current_weapon][0].get_node("reload").play()
+		reload()
 	
 	# Change weapon with mouse wheel
 	if event is InputEventMouseButton:
@@ -405,6 +402,13 @@ func _input(event):
 	elif Input.is_action_just_pressed("weapon_3"):
 		current_weapon_index = 2
 		weapon_index_changed = true
+
+
+func reload():
+	reloading = true
+	reload_cooldown.start()
+	Multiplayer.reload()
+	guns[current_weapon][0].get_node("reload").play()
 
 
 func unscope():

@@ -30,7 +30,7 @@ func _player_died(id, pos, rot, bullet_global_transform):
 	var player_info = Multiplayer.player_info
 	player_info[id]["instance"].hide() # Hide player until they respawn
 	if player_info[id]["instance"].customizations["bottles"].has(player_info[id]["info"]["customizations"]["bottles"]):
-		var broken_player_inst = player_info[id]["instance"].customizations["bottles"][player_info[id]["info"]["customizations"]["bottles"]][2].instance()
+		var broken_player_inst = player_info[id]["instance"].customizations["bottles"][player_info[id]["info"]["customizations"]["bottles"]][3].instance()
 		add_child(broken_player_inst)
 		broken_player_inst.setup(pos, rot, bullet_global_transform)
 
