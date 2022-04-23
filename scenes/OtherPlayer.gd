@@ -20,6 +20,7 @@ const customizations = {
 		"ketchup_bottle": ["\"Ketchup\"", "It's ketchup, nothing else", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
 		"superbottle": ["Superbottle", "Is it a bird? Is it a plane? No, it's Superbottle!", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
 		"cyberbottle": ["CYBERBOTTLE", "(almost) unbreakable", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
+		"suitbottle": ["Suit Bottle", "Nothin' suits me like a suit!", preload("res://assets/customizations/SuitBottle.tscn"), preload("res://assets/customizations/SuitBottle_broken.tscn")],
 	}
 }
 
