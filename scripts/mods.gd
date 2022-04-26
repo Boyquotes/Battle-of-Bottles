@@ -1,7 +1,7 @@
 extends Node
 
 
-const MODS_PATH = "user://mods"
+const MODS_PATH = "user://mods/"
 
 var next_mod = ""
 var next_label = ""
@@ -43,7 +43,7 @@ func get_active():
 
 func load_mod(filename: String) -> bool:
 	var file = File.new()
-	if file.file_exists(MODS_PATH + "/%s" % filename):
+	if file.file_exists(MODS_PATH + filename):
 		ProjectSettings.load_resource_pack(MODS_PATH + "/%s" % filename)
 		if file.file_exists("res://" + filename.replace(".pck", ".tscn")):
 			if file.file_exists("res://" + filename.replace(".pck", ".json")):
@@ -83,6 +83,14 @@ func deactivate_mod(filename: String):
 	mods_info[filename]["scene"].queue_free()
 	mods_info.erase(filename)
 	Global.save_settings()
+
+
+func remove_mod(filename: String):
+	var d = Directory.new()
+	if d.file_exists(MODS_PATH + filename):
+		d.remove(MODS_PATH + filename)
+	if mods_info.has(filename):
+		deactivate_mod(filename)
 
 
 func add_mod(mod_instance: Node):

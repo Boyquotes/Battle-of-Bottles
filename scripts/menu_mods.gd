@@ -1,7 +1,6 @@
 extends MarginContainer
 
 
-const MODS_PATH = "user://mods"
 const MOD_LIST_ITEM_SCENE = preload("res://scenes/ModListItem.tscn")
 
 var next_mod = ""
@@ -36,7 +35,7 @@ func copy_mod(files):
 	call_deferred("start_loading")
 	for i in files:
 		if i.get_extension() == "pck":
-			d.copy(i, Mods.MODS_PATH + "/" + i.get_file())
+			d.copy(i, Mods.MODS_PATH + i.get_file())
 	call_deferred("stop_loading")
 	return
 
@@ -66,12 +65,14 @@ func show_mods():
 				mod_item_instance.set_mod_version(active[i]["version"])
 				mod_item_instance.activate_label()
 				mod_item_instance.connect("toggle_mod", self, "toggle_mod")
+				mod_item_instance.connect("remove_mod", self, "remove_mod")
 				list_node.add_child(mod_item_instance)
 		if inactive.size() > 0:
 			for i in inactive:
 				var mod_item_instance = MOD_LIST_ITEM_SCENE.instance()
 				mod_item_instance.set_mod_name(i, i)
 				mod_item_instance.connect("toggle_mod", self, "toggle_mod")
+				mod_item_instance.connect("remove_mod", self, "remove_mod")
 				list_node.add_child(mod_item_instance)
 	else:
 		$HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/no_mods.show()
@@ -92,6 +93,12 @@ func toggle_mod(file_name):
 		show_mods()
 
 
+func remove_mod(file_name):
+	var d = Directory.new()
+	Mods.remove_mod(file_name)
+	show_mods()
+
+
 func _on_Continue_pressed():
 	Mods.activate_mod(next_mod)
 	$warning.hide()
@@ -107,7 +114,9 @@ func _on_BackMods_pressed():
 
 
 func _on_no_mods_pressed():
-	OS.shell_open(ProjectSettings.globalize_path("user://mods"))
+	OS.shell_open(ProjectSettings.globalize_path(Mods.MODS_PATH))
+
 
 func _exit_tree():
-	current_thread.wait_to_finish()
+	if current_thread != null:
+		current_thread.wait_to_finish()

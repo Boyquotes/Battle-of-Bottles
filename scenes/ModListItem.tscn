@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/UI/gear.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/vegur/Vegur-Regular.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/ModListItem.gd" type="Script" id=3]
+[ext_resource path="res://assets/UI/trashcan.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/trashcanOpen.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/vegur/Vegur-Light.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=9]
@@ -36,9 +38,6 @@ margin_bottom = 57.0
 size_flags_horizontal = 3
 custom_styles/panel = SubResource( 9 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="default_background" type="Panel" parent="."]
 margin_right = 287.0
@@ -47,20 +46,9 @@ custom_styles/panel = SubResource( 5 )
 
 [node name="active_background" type="Panel" parent="."]
 visible = false
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 280.0
-margin_bottom = 61.0
-custom_styles/panel = SubResource( 8 )
-
-[node name="PlayerListItem" type="Control" parent="."]
 margin_right = 287.0
 margin_bottom = 57.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_styles/panel = SubResource( 8 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 287.0
@@ -133,12 +121,29 @@ margin_top = 48.0
 margin_right = 237.0
 margin_bottom = 48.0
 
-[node name="select" type="Button" parent="."]
+[node name="buttons" type="HBoxContainer" parent="."]
 margin_right = 287.0
 margin_bottom = 57.0
+
+[node name="select" type="Button" parent="buttons"]
+margin_right = 233.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/focus = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
 
-[connection signal="pressed" from="select" to="." method="_on_select_pressed"]
+[node name="TextureButton" type="TextureButton" parent="buttons"]
+margin_left = 237.0
+margin_right = 287.0
+margin_bottom = 57.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
+
+[connection signal="pressed" from="buttons/select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="buttons/TextureButton" to="." method="_on_TextureButton_pressed"]

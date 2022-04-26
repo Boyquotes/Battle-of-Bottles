@@ -2,6 +2,7 @@ extends PanelContainer
 
 
 signal toggle_mod
+signal remove_mod
 
 var file_name = ""
 var active = false
@@ -38,3 +39,7 @@ func deactivate_label():
 func _on_select_pressed():
 	if file_name != "":
 		emit_signal("toggle_mod", file_name)
+
+
+func _on_TextureButton_pressed():
+	emit_signal("remove_mod", file_name)
