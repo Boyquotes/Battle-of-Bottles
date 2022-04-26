@@ -3177,6 +3177,7 @@ __meta__ = {
 margin_right = 275.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 0, 210 )
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
