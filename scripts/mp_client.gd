@@ -13,7 +13,7 @@ signal player_died
 signal cam_to_map
 
 const DEFAULT_SERVER_PORT = 25575
-const PROTOCOL_VERSION = "1.2-dev"
+const PROTOCOL_VERSION = "1.2"
 
 var other_player_scene
 var connected = false
