@@ -83,7 +83,7 @@ stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 50.0
-margin_right = 287.0
+margin_right = 237.0
 margin_bottom = 57.0
 size_flags_horizontal = 3
 custom_constants/separation = 3
@@ -91,12 +91,12 @@ alignment = 1
 
 [node name="Space" type="Control" parent="HBoxContainer/VBoxContainer"]
 margin_top = 9.0
-margin_right = 237.0
+margin_right = 187.0
 margin_bottom = 9.0
 
 [node name="ModName" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 12.0
-margin_right = 237.0
+margin_right = 187.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -107,7 +107,7 @@ clip_text = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 45.0
-margin_right = 237.0
+margin_right = 187.0
 margin_bottom = 45.0
 
 [node name="VersionLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
@@ -132,24 +132,30 @@ valign = 1
 
 [node name="Space2" type="Control" parent="HBoxContainer/VBoxContainer"]
 margin_top = 48.0
-margin_right = 237.0
+margin_right = 187.0
 margin_bottom = 48.0
 
-[node name="buttons" type="HBoxContainer" parent="."]
+[node name="Control" type="Control" parent="HBoxContainer"]
+margin_left = 237.0
 margin_right = 287.0
 margin_bottom = 57.0
+rect_min_size = Vector2( 50, 0 )
 
-[node name="select" type="Button" parent="buttons"]
+[node name="Select" type="HBoxContainer" parent="."]
+margin_right = 287.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+
+[node name="select" type="Button" parent="Select"]
 margin_right = 233.0
 margin_bottom = 57.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/focus = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
 
-[node name="TextureButton" type="TextureButton" parent="buttons"]
+[node name="TextureButton" type="TextureButton" parent="Select"]
 margin_left = 237.0
 margin_right = 287.0
 margin_bottom = 57.0
@@ -159,5 +165,5 @@ texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 4 )
 texture_focused = ExtResource( 5 )
 
-[connection signal="pressed" from="buttons/select" to="." method="_on_select_pressed"]
-[connection signal="pressed" from="buttons/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Select/select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="Select/TextureButton" to="." method="_on_TextureButton_pressed"]
