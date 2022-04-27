@@ -200,6 +200,7 @@ func process_input(delta):
 	if is_on_floor() and not IngameUI.paused:
 		if Input.is_action_just_pressed("movement_jump"):
 			vel.y = JUMP_POWER
+			Multiplayer.jump()
 	
 	# Applying recoil
 	if next_recoil != 0:
@@ -393,13 +394,13 @@ func _input(event):
 		weapon_index_changed = true
 	
 	# Change weapon with number keys
-	if Input.is_action_just_pressed("weapon_1"):
+	if Input.is_action_just_pressed("weapon_1") and current_weapon_index != 0:
 		current_weapon_index = 0
 		weapon_index_changed = true
-	elif Input.is_action_just_pressed("weapon_2"):
+	elif Input.is_action_just_pressed("weapon_2") and current_weapon_index != 1:
 		current_weapon_index = 1
 		weapon_index_changed = true
-	elif Input.is_action_just_pressed("weapon_3"):
+	elif Input.is_action_just_pressed("weapon_3") and current_weapon_index != 2:
 		current_weapon_index = 2
 		weapon_index_changed = true
 

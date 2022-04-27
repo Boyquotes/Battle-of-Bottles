@@ -28,12 +28,21 @@ func activate_label():
 	active = true
 	$default_background.hide()
 	$active_background.show()
+	$error_background.hide()
 
 
 func deactivate_label():
 	active = false
 	$default_background.show()
 	$active_background.hide()
+	$error_background.hide()
+
+
+func error_label():
+	active = false
+	$default_background.hide()
+	$active_background.hide()
+	$error_background.show()
 
 
 func _on_select_pressed():
