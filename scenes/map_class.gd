@@ -14,6 +14,7 @@ func _ready():
 	player = get_node(player_path)
 	refresh_queue()
 	Multiplayer.connect("player_died", self, "_player_died")
+	player.connect("died", self, "self_died")
 	Multiplayer.connect("cam_to_map", self, "_cam_to_map")
 	Multiplayer.map_loaded()
 
@@ -29,10 +30,16 @@ func _process(delta):
 func _player_died(id, pos, rot, bullet_global_transform):
 	var player_info = Multiplayer.player_info
 	player_info[id]["instance"].hide() # Hide player until they respawn
-	if player_info[id]["instance"].customizations["bottles"].has(player_info[id]["info"]["customizations"]["bottles"]):
-		var broken_player_inst = player_info[id]["instance"].customizations["bottles"][player_info[id]["info"]["customizations"]["bottles"]][3].instance()
+	if Global.customizations["bottles"].has(player_info[id]["info"]["customizations"]["bottles"]):
+		var broken_player_inst = Global.customizations["bottles"][player_info[id]["info"]["customizations"]["bottles"]][3].instance()
 		add_child(broken_player_inst)
 		broken_player_inst.setup(pos, rot, bullet_global_transform)
+
+
+func self_died(pos: Vector3, rot: Vector3, bullet_global_transform: Transform):
+	var broken_player_inst = Global.customizations["bottles"][Global.user_customization["bottles"]][3].instance()
+	add_child(broken_player_inst)
+	broken_player_inst.setup(pos, rot, bullet_global_transform)
 
 
 func _cam_to_map():

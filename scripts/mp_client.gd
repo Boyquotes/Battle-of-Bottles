@@ -42,12 +42,10 @@ var maps = {
 var kills = 0
 var deaths = 0
 
-onready var other_player_script = preload("res://scenes/OtherPlayer.gd").new()
 var current_player: KinematicBody
 
 
 func _ready():
-
 	other_player_scene = preload("res://scenes/OtherPlayer.tscn")
 
 	get_tree().connect("network_peer_connected", self, "_player_connected")

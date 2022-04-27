@@ -5,24 +5,6 @@ const DIRT_PARTICLES_SCENE = preload("res://assets/particles/dirt_particles.tscn
 
 var id
 var current_weapon = "machinegun"
-const customizations = {
-	"hats": {
-		"": ["none", null],
-		"pizza": ["Italian Hat", preload("res://assets/customizations/Pizza.tscn")],
-		"german": ["German Hat", preload("res://assets/customizations/German.tscn")],
-		"banana": ["Banana Hat", preload("res://assets/customizations/Banana.tscn")],
-		"hat": ["Bowler Hat", preload("res://assets/customizations/Hat.tscn")],
-		"holiday_hat": ["Holiday Hat", preload("res://assets/customizations/Holiday.tscn")],
-		"sunglasses": ["Sunglasses", preload("res://assets/customizations/Sunglasses.tscn")]
-	},
-	"bottles": {
-		"default_bottle": ["Default", "What have I done to you?", preload("res://assets/customizations/DefaultBottle.tscn"), preload("res://assets/customizations/DefaultBottle_broken.tscn")],
-		"ketchup_bottle": ["\"Ketchup\"", "It's ketchup, nothing else", preload("res://assets/customizations/KetchupBottle.tscn"), preload("res://assets/customizations/KetchupBottle_broken.tscn")],
-		"superbottle": ["Superbottle", "Is it a bird? Is it a plane? No, it's Superbottle!", preload("res://assets/customizations/SuperBottle.tscn"), preload("res://assets/customizations/SuperBottle_broken.tscn")],
-		"cyberbottle": ["CYBERBOTTLE", "(almost) unbreakable", preload("res://assets/customizations/CyberBottle.tscn"), preload("res://assets/customizations/CyberBottle_broken.tscn")],
-		"suitbottle": ["Suit Bottle", "Nothin' suits me like a suit!", preload("res://assets/customizations/SuitBottle.tscn"), preload("res://assets/customizations/SuitBottle_broken.tscn")],
-	}
-}
 
 onready var guns = {
 	# "unarmed": [null, 0, 0, false],
@@ -37,6 +19,7 @@ func _ready():
 
 
 func customize(player_customizations: Dictionary):
+	var customizations = Global.customizations
 	for i in player_customizations.keys():
 		if customizations.has(i):
 			if customizations[i].has(player_customizations[i]):

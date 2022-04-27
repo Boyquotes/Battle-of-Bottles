@@ -36,7 +36,7 @@ onready var mods_list = $menu_mods/HBoxContainer/VBoxContainer/HBoxContainer/VBo
 onready var menu_connect_loading_spinner = $menu_connect/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/loading/spinner_anchor/Sprite
 onready var mods_warning = $menu_mods/warning
 onready var camera_start_pos = camera_3d.global_transform.origin
-onready var custs: Dictionary = customization_character.customizations
+onready var custs: Dictionary = Global.customizations
 
 
 func _ready():

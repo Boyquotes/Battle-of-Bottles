@@ -333,7 +333,7 @@ func die(bullet_global_transform, id):
 		if guns[current_weapon][3] and is_scoping:
 			unscope()
 		Multiplayer.die(global_transform.origin, rotation, bullet_global_transform, id)
-		emit_signal("died")
+		emit_signal("died", global_transform.origin, rotation, bullet_global_transform)
 		is_spectating = true
 		IngameUI.show_death_screen(id, DEATH_SCREEN_LENGTH)
 		spawn() # Set position to random spawn point. This does NOT respawn the player.
