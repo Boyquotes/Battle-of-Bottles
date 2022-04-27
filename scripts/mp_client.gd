@@ -287,7 +287,7 @@ func player_respawn(id):
 			camera.queue_free()
 	else:
 		var cam = spectator_camera
-		if cam != null:
+		if is_instance_valid(cam):
 			cam.queue_free()
 
 
