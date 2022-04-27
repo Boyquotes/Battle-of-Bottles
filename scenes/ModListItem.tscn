@@ -51,12 +51,16 @@ custom_styles/panel = SubResource( 5 )
 visible = false
 margin_right = 287.0
 margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 8 )
 
 [node name="error_background" type="Panel" parent="."]
 visible = false
 margin_right = 287.0
 margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 10 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -99,6 +103,7 @@ size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
 text = "Mod Name"
 valign = 1
+clip_text = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 45.0
