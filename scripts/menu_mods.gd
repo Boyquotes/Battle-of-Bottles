@@ -5,6 +5,7 @@ const MOD_LIST_ITEM_SCENE = preload("res://scenes/ModListItem.tscn")
 
 var next_mod = ""
 var next_label = ""
+var mod_errors = []
 var current_thread: Thread
 
 onready var list_node = $HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/list_blur/list_darken/ScrollContainer/mods_list
@@ -71,6 +72,8 @@ func show_mods():
 			for i in inactive:
 				var mod_item_instance = MOD_LIST_ITEM_SCENE.instance()
 				mod_item_instance.set_mod_name(i, i)
+				if i in mod_errors:
+					mod_item_instance.error_label()
 				mod_item_instance.connect("toggle_mod", self, "toggle_mod")
 				mod_item_instance.connect("remove_mod", self, "remove_mod")
 				list_node.add_child(mod_item_instance)
@@ -100,7 +103,9 @@ func remove_mod(file_name):
 
 
 func _on_Continue_pressed():
-	Mods.activate_mod(next_mod)
+	var status = Mods.activate_mod(next_mod)
+	if status == false and not next_mod in mod_errors:
+		mod_errors.append(next_mod)
 	$warning.hide()
 	show_mods()
 
