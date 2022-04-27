@@ -60,11 +60,10 @@ func shoot():
 				ray_cast.rotation_degrees.y = rand_range(-spread_angle_y, spread_angle_y)
 				ray_cast.force_raycast_update()
 				
-				if ray_cast.is_colliding() and not ray_cast.get_collider().has_method("bullet_hit"):
+				if ray_cast.is_colliding():
 					Multiplayer.shoot(ray_cast.get_collision_point())
-				else:
-					Multiplayer.shoot(Vector3(0,0,0))
-					Input.start_joy_vibration(0, 0, 1, 0.1)
+					if ray_cast.get_collider().has_method("bullet_hit"):
+							Input.start_joy_vibration(0, 0, 1, 0.1)
 				
 				if ray_cast.is_colliding():
 					var body = ray_cast.get_collider()
