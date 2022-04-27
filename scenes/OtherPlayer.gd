@@ -58,8 +58,10 @@ func bullet_hit(damage, bullet_global_trans):
 
 
 func shoot(hit_pos: Vector3):
-	guns[current_weapon].get_node("Particles").emitting = true
+	var particles: Particles = guns[current_weapon].get_node("Particles")
+	particles.emitting = true
 	guns[current_weapon].get_node("3d_shoot").play()
+	guns[current_weapon].show_trail(particles.global_transform.origin, hit_pos)
 	if hit_pos != Vector3(0,0,0) and get_parent() != null:
 		var dirt_particles = DIRT_PARTICLES_SCENE.instance()
 		get_parent().add_child(dirt_particles)

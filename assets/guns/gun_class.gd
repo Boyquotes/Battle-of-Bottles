@@ -5,6 +5,7 @@ extends Spatial
 const PARTICLE_SCENE = preload("res://assets/particles/HitParticles.tscn")
 const BULLET_DECAL_SCENE = preload("res://assets/particles/bullet_decal.tscn")
 const DIRT_PARTICLES_SCENE = preload("res://assets/particles/dirt_particles.tscn")
+const TRAIL_SCENE = preload("res://assets/guns/Trail.tscn")
 
 export var damage = 10
 export var bullets: int = 1
@@ -62,6 +63,9 @@ func shoot():
 				
 				if ray_cast.is_colliding():
 					Multiplayer.shoot(ray_cast.get_collision_point())
+					
+					show_trail(particles.global_transform.origin, ray_cast.get_collision_point())
+					
 					if ray_cast.get_collider().has_method("bullet_hit"):
 							Input.start_joy_vibration(0, 0, 1, 0.1)
 				
@@ -94,9 +98,21 @@ func shoot():
 						dirt_particles.scale = Vector3(5, 5, 5)
 						dirt_particles.global_transform.origin = ray_cast.get_collision_point()
 						#dirt_particles.scale /= ray_cast.get_collider().get_parent().scale
+				else:
+					var end = (global_transform.basis.scaled(Vector3(1.0 / scale.x, 1.0 / scale.y, 1.0 / scale.z)).z.normalized()) * 128
+					show_trail(particles.global_transform.origin, global_transform.origin + end)
+					Multiplayer.shoot(end)
 		else:
 			if not player.reloading:
 				# Reload
 				player.reload()
 	else:
 		player.is_shooting = false
+
+
+func show_trail(start: Vector3, end: Vector3):
+	var ray = TRAIL_SCENE.instance()
+	get_parent().get_parent().add_child(ray)
+	ray.global_transform.origin = (start + end) / 2
+	ray.scale = Vector3(1, 1, start.distance_to(end))
+	ray.look_at(end, Vector3.UP)
