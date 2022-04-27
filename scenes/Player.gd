@@ -200,6 +200,7 @@ func process_input(delta):
 	if is_on_floor() and not IngameUI.paused:
 		if Input.is_action_just_pressed("movement_jump"):
 			vel.y = JUMP_POWER
+			Multiplayer.jump()
 	
 	# Applying recoil
 	if next_recoil != 0:

@@ -198,6 +198,10 @@ remote func hit(id, damage, bullet_global_trans):
 			emit_signal("hit", damage, bullet_global_trans, get_tree().get_rpc_sender_id())
 
 
+remote func other_jump():
+	pass
+
+
 remote func other_shoot(hit_pos: Vector3):
 	if is_map_loaded:
 		var id = get_tree().get_rpc_sender_id()
@@ -216,6 +220,11 @@ remote func other_bottle_hit(id, damage, bullet_global_trans):
 func shoot(hit_pos: Vector3):
 	if connected:
 		rpc("other_shoot", hit_pos)
+
+
+func jump():
+	if connected:
+		rpc("other_jump")
 
 
 func reload():
