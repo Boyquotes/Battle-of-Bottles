@@ -36,7 +36,7 @@ config/windows_native_icon="res://assets/textures/icon.ico"
 
 [autoload]
 
-Multiplayer="*res://scripts/mp_client.gd"
+Multiplayer="*res://scripts/multiplayer.gd"
 Global="*res://scripts/global.gd"
 BackgroundLoader="*res://scripts/background_loader.gd"
 Mods="*res://scripts/mods.gd"
