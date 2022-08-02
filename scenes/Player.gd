@@ -6,9 +6,9 @@ signal died
 signal hit
 
 const GRAVITY = -24.8
-const MAX_SPEED = 15
+const MAX_SPEED = 13
 const JUMP_POWER = 10
-const ACCEL = 2.5
+const ACCEL = 8
 const DEACCEL= 16
 const AIR_ACCEL = 1
 const AIR_DEACCEL = 2.5
@@ -285,7 +285,8 @@ func process_movement(delta):
 		
 	dir.y = 0
 	
-	vel.y += delta * GRAVITY
+	if not is_on_floor():
+		vel.y += delta * GRAVITY
 	
 	var hvel = vel
 	hvel.y = 0
