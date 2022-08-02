@@ -62,6 +62,7 @@ onready var max_ammo_label = $IngameUI/ammo/max
 onready var current_ammo_label = $IngameUI/ammo/current
 onready var shoot_cooldown = $shoot_cooldown
 onready var reload_cooldown = $reload_cooldown
+onready var ray_cast_jump = $RayCastJump
 onready var map = get_parent()
 
 
@@ -197,7 +198,7 @@ func process_input(delta):
 	dir = dir.rotated(Vector3(0,1,0), rotation.y)
 	
 	# Jumping
-	if is_on_floor() and not IngameUI.paused:
+	if (is_on_floor() or ray_cast_jump.is_colliding()) and not IngameUI.paused:
 		if Input.is_action_just_pressed("movement_jump"):
 			vel.y = JUMP_POWER
 			Multiplayer.jump()
