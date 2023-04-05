@@ -1,6 +1,6 @@
 # Battle of Bottles
 
-A 3D multiplayer shooter game made in Godot.
+A 3D multiplayer shooter game made in Godot. Please note that Battle of Bottles currently only supports [Godot 3.x](https://godotengine.org/download/3.x/).
 
 ![Battle of Bottles Screenshot](https://img.itch.zone/aW1hZ2UvMTMzNDIwMy83NzkzMjYwLnBuZw==/original/GTH%2FEk.png)
 

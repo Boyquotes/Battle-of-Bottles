@@ -2976,24 +2976,24 @@ margin_right = 964.0
 margin_bottom = 540.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menu_main/HBoxContainer"]
-margin_right = 554.0
+margin_right = 672.0
 margin_bottom = 540.0
 
 [node name="Label" type="Label" parent="menu_main/HBoxContainer/VBoxContainer"]
-margin_right = 554.0
+margin_right = 672.0
 margin_bottom = 121.0
 custom_fonts/font = SubResource( 171 )
-text = "Ba'le o' Bo'les"
+text = "Battle of Bottles"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="menu_main/HBoxContainer/VBoxContainer"]
 margin_top = 125.0
-margin_right = 554.0
+margin_right = 672.0
 margin_bottom = 540.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 275.0
+margin_right = 334.0
 margin_bottom = 415.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -3001,26 +3001,30 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="Play" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
+margin_right = 334.0
 text = "Play"
 
 [node name="Settings" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 142.0
+margin_right = 334.0
 margin_bottom = 192.0
 text = "Settings"
 
 [node name="Customize" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 222.0
+margin_right = 334.0
 margin_bottom = 272.0
 text = "Customize"
 
 [node name="Quit" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 25 )]
 margin_top = 302.0
+margin_right = 334.0
 margin_bottom = 352.0
 text = "Quit"
 
 [node name="Spacer" type="Control" parent="menu_main/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 279.0
-margin_right = 554.0
+margin_left = 338.0
+margin_right = 672.0
 margin_bottom = 415.0
 size_flags_horizontal = 3
 
@@ -3852,7 +3856,8 @@ margin_top = 142.0
 margin_right = 275.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 50 )
-hint_tooltip = "Map"
+hint_tooltip = "Default Map - The default multiplayer map (recommended)
+Zombie Map - A city map with zombies"
 custom_styles/panel = ExtResource( 7 )
 script = ExtResource( 18 )
 __meta__ = {
@@ -3930,7 +3935,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 custom_colors/font_color = Color( 0.466667, 0.466667, 0.466667, 1 )
 custom_fonts/font = SubResource( 176 )
-text = "Copyright (c) 2020 - 2022 nokoe, tpart."
+text = "Copyright (c) 2020 - 2023 nokoe, tpart."
 align = 2
 valign = 2
 
